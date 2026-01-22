@@ -6,11 +6,11 @@ This repo now contains a **static blog** built with **Hugo**, deployable for fre
 
 Create a folder like:
 
-`content/YYYY/MM/DD/your-post-slug/index.md`
+`content/posts/YYYY/MM/DD/your-post-slug/index.md`
 
 Example:
 
-`content/2026/01/22/hello-world/index.md`
+`content/posts/2026/01/22/hello-world/index.md`
 
 Minimal front matter:
 

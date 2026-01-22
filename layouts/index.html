@@ -7,41 +7,79 @@
         <div class="accent-rule"></div>
       </section>
 
-      {{ $posts := where .Site.RegularPages "Section" "not in" (slice "tags" "about" "archive") }}
+      {{ $posts := sort (where .Site.RegularPages "Section" "posts") "Date" "desc" }}
       {{ if gt (len $posts) 0 }}
-        <ul class="post-list">
-          {{ range (sort $posts "Date" "desc") }}
-            <li class="post-row">
-              <div class="post-row-meta">
-                <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
-                <span aria-hidden="true">·</span>
-                <span>{{ .ReadingTime }} min read</span>
-              </div>
+        {{ $groups := $posts.GroupByDate "2006-01" }}
+        <div class="archive-layout">
+          <div class="archive-main">
+            {{ range $groups }}
+              {{ $groupDate := time (printf "%s-01" .Key) }}
+              {{ $year := $groupDate.Format "2006" }}
+              {{ $monthName := $groupDate.Format "January" }}
+              {{ $sectionId := printf "home-ym-%s" .Key }}
 
-              <h2 class="post-row-title">
-                <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-              </h2>
+              <section id="{{ $sectionId }}" class="archive-section">
+                <h2 class="archive-heading">
+                  <span class="archive-year">{{ $year }}</span>
+                  <span class="muted">·</span>
+                  <span class="archive-month">{{ $monthName }}</span>
+                </h2>
 
-              {{ with .Params.description }}
-                <p class="post-row-excerpt">{{ . }}</p>
-              {{ end }}
+                <ul class="post-list">
+                  {{ range .Pages }}
+                    <li class="post-row archive-post-row">
+                      <div class="post-row-meta">
+                        <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
+                        <span aria-hidden="true">·</span>
+                      </div>
 
-              {{ with .Params.tags }}
-                <div class="tag-row" aria-label="Tags">
-                  {{ range first 4 . }}
-                    <a class="tag-chip" href="{{ (printf "/tags/%s/" (. | urlize)) | relURL }}">{{ . }}</a>
+                      <h2 class="post-row-title archive-post-title">
+                        <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                      </h2>
+
+                      {{ with .Params.description }}
+                        <p class="post-row-excerpt">{{ . }}</p>
+                      {{ end }}
+
+                      {{ with .Params.tags }}
+                        <div class="tag-row" aria-label="Tags">
+                          {{ range first 4 . }}
+                            <a class="tag-chip" href="{{ (printf "/tags/%s/" (. | urlize)) | relURL }}">{{ . }}</a>
+                          {{ end }}
+                        </div>
+                      {{ end }}
+                    </li>
                   {{ end }}
-                </div>
-              {{ end }}
-            </li>
-          {{ end }}
-        </ul>
+                </ul>
+              </section>
+            {{ end }}
+          </div>
+
+          <aside class="archive-toc" aria-label="Home navigation">
+            <div class="archive-toc-inner">
+              <div class="archive-toc-title">Jump</div>
+              <nav>
+                <ul class="archive-toc-list">
+                  {{ range $groups }}
+                    {{ $groupDate := time (printf "%s-01" .Key) }}
+                    {{ $year := $groupDate.Format "2006" }}
+                    {{ $monthName := $groupDate.Format "January" }}
+                    {{ $sectionId := printf "home-ym-%s" .Key }}
+                    <li>
+                      <a class="archive-toc-link" href="#{{ $sectionId }}">{{ $year }} · {{ $monthName }}</a>
+                    </li>
+                  {{ end }}
+                </ul>
+              </nav>
+            </div>
+          </aside>
+        </div>
 
         {{ partial "social_links.html" . }}
       {{ else }}
         <div class="empty-state">
           <p>No posts yet.</p>
-          <p>Add Markdown under <span class="mono">content/YYYY/MM/DD/slug/index.md</span>.</p>
+          <p>Add Markdown under <span class="mono">content/posts/YYYY/MM/DD/slug/index.md</span>.</p>
         </div>
       {{ end }}
     </div>

@@ -11,6 +11,9 @@ params:
 taxonomies:
   tag: tags
 
+permalinks:
+  posts: "/:year/:month/:day/:slug/"
+
 markup:
   goldmark:
     renderer:

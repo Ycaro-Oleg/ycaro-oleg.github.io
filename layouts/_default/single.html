@@ -3,7 +3,6 @@
     <div class="article-shell">
       <div class="article-meta">
         {{ with .Date }}<time datetime="{{ .Format "2006-01-02" }}">{{ .Format "Jan 2, 2006" }}</time>{{ end }}
-        {{ with .ReadingTime }}<span aria-hidden="true">·</span><span>{{ . }} min read</span>{{ end }}
         {{ with .Params.tags }}
           <span aria-hidden="true">·</span>
           <span class="tag-row" style="margin: 0;">
