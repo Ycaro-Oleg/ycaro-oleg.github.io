@@ -2,10 +2,6 @@
   {{ partial "container_open.html" . }}
     <div class="footer-inner">
       <div>&copy; {{ now.Year }} {{ .Site.Title }}</div>
-      <div class="flex items-center gap-4">
-        <a href="{{ .Site.Params.github }}" target="_blank" rel="noopener">GitHub</a>
-        <a href="{{ .Site.Params.linkedin }}" target="_blank" rel="noopener">LinkedIn</a>
-      </div>
     </div>
   {{ partial "container_close.html" . }}
 </footer>
