@@ -1,0 +1,33 @@
+{{ define "main" }}
+  {{ partial "container_open.html" . }}
+    <div class="py-6 md:py-8">
+      <section class="hero">
+        <h1>{{ .Title }}</h1>
+        <p>{{ .Params.description | default "Posts in this section." }}</p>
+        <div class="accent-rule"></div>
+      </section>
+
+      {{ $posts := sort .Pages "Date" "desc" }}
+      {{ if gt (len $posts) 0 }}
+        <ul class="post-list">
+          {{ range $posts }}
+            <li class="post-row">
+              <div class="post-row-meta">
+                <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
+                <span aria-hidden="true">·</span>
+                <span>{{ .ReadingTime }} min read</span>
+              </div>
+              <h2 class="post-row-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+              {{ with .Params.description }}<p class="post-row-excerpt">{{ . }}</p>{{ end }}
+            </li>
+          {{ end }}
+        </ul>
+      {{ else }}
+        <div class="empty-state">
+          <p>No posts yet.</p>
+        </div>
+      {{ end }}
+    </div>
+  {{ partial "container_close.html" . }}
+{{ end }}
+

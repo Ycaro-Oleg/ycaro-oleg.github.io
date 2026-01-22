@@ -1,0 +1,18 @@
+baseURL: /
+languageCode: en-us
+title: YCR Mind
+enableRobotsTXT: true
+
+params:
+  description: "Minimal notes on building software."
+  github: "https://github.com/Ycaro-Oleg"
+  linkedin: "https://www.linkedin.com/in/ycaro-pires-944297240/"
+
+taxonomies:
+  tag: tags
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+

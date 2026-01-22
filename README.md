@@ -1,24 +1,42 @@
-# README
+# YCR Mind
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This repo now contains a **static blog** built with **Hugo**, deployable for free via **GitHub Pages** (same style as `akitaonrails.github.io`).
 
-Things you may want to cover:
+## Write posts (Markdown)
 
-* Ruby version
+Create a folder like:
 
-* System dependencies
+`content/YYYY/MM/DD/your-post-slug/index.md`
 
-* Configuration
+Example:
 
-* Database creation
+`content/2026/01/22/hello-world/index.md`
 
-* Database initialization
+Minimal front matter:
 
-* How to run the test suite
+```yaml
+---
+title: "My post title"
+date: 2026-01-22T12:00:00-03:00
+tags: ["rails", "notes"]
+description: "Short excerpt shown on the home page."
+---
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+## Local preview
 
-* Deployment instructions
+Install Hugo, then:
 
-* ...
+`hugo server -D`
+
+## Deploy (GitHub Pages)
+
+1. Push to `main`.
+2. In GitHub: **Settings → Pages**:
+   - Source: **GitHub Actions**
+3. The workflow `.github/workflows/pages.yml` builds and deploys automatically.
+
+## Notes
+
+- The old Rails admin/editor is no longer needed for GitHub Pages deploys.
+- Styling lives in `static/assets/app.css` and templates in `layouts/`.

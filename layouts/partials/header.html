@@ -1,0 +1,17 @@
+<header class="site-header">
+  {{ partial "container_open.html" . }}
+    <div class="site-header-inner">
+      <div class="flex items-center gap-3">
+        <a class="wordmark" href="{{ "/" | relURL }}">{{ .Site.Title }}</a>
+      </div>
+
+      <nav class="nav" aria-label="Primary">
+        <a class="nav-link" href="{{ "/" | relURL }}">Home</a>
+        <a class="nav-link" href="{{ "/archive/" | relURL }}">Archive</a>
+        <a class="nav-link" href="{{ "/tags/" | relURL }}">Tags</a>
+        <a class="nav-link" href="{{ "/about/" | relURL }}">About</a>
+      </nav>
+    </div>
+  {{ partial "container_close.html" . }}
+</header>
+

@@ -1,0 +1,21 @@
+{{ define "main" }}
+  {{ partial "container_open.html" . }}
+    <div class="py-6 md:py-8">
+      <section class="hero">
+        <h1>Tags</h1>
+        <p>Topics across the archive.</p>
+        <div class="accent-rule"></div>
+      </section>
+
+      <div class="tag-row" aria-label="All tags">
+        {{ range .Data.Terms.Alphabetical }}
+          <a class="tag-chip" href="{{ .Page.RelPermalink }}">
+            <span>{{ .Page.Title }}</span>
+            <span class="tag-chip-count">{{ .Count }}</span>
+          </a>
+        {{ end }}
+      </div>
+    </div>
+  {{ partial "container_close.html" . }}
+{{ end }}
+

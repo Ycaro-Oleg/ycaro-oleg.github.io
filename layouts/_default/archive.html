@@ -1,0 +1,39 @@
+{{ define "main" }}
+  {{ partial "container_open.html" . }}
+    <div class="py-6 md:py-8">
+      <section class="hero">
+        <h1>Archive</h1>
+        <p>All posts, grouped by year.</p>
+        <div class="accent-rule"></div>
+      </section>
+
+      {{ $posts := sort (where .Site.RegularPages "Section" "not in" (slice "tags" "about" "archive")) "Date" "desc" }}
+      {{ if gt (len $posts) 0 }}
+        <div style="display: grid; gap: 22px;">
+          {{ range ($posts.GroupByDate "2006") }}
+            <section>
+              <h2 style="margin: 0 0 10px; font-size: 1.15rem; font-weight: 750;">{{ .Key }}</h2>
+              <ul class="post-list">
+                {{ range .Pages }}
+                  <li class="post-row" style="padding: 12px 0;">
+                    <div class="post-row-meta" style="margin-bottom: 4px;">
+                      <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2" }}</time>
+                    </div>
+                    <h3 class="post-row-title" style="font-size: 1rem;">
+                      <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                    </h3>
+                  </li>
+                {{ end }}
+              </ul>
+            </section>
+          {{ end }}
+        </div>
+      {{ else }}
+        <div class="empty-state">
+          <p>No posts yet.</p>
+          <p>Add Markdown under <span class="mono">content/YYYY/MM/DD/slug/index.md</span>.</p>
+        </div>
+      {{ end }}
+    </div>
+  {{ partial "container_close.html" . }}
+{{ end }}
