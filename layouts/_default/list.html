@@ -16,8 +16,20 @@
                 <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
                 <span aria-hidden="true">·</span>
               </div>
-              <h2 class="post-row-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
-              {{ with .Params.description }}<p class="post-row-excerpt">{{ . }}</p>{{ end }}
+              <h2 class="post-row-title">
+                <a href="{{ .RelPermalink }}">
+                  {{ partial "i18n_text.html" (dict "en" .Params.title_en "ptbr" .Params.title_ptbr "fallback" .Title) }}
+                </a>
+              </h2>
+
+              {{ $descFallback := .Params.description }}
+              {{ $descEn := .Params.description_en }}
+              {{ $descPt := .Params.description_ptbr }}
+              {{ if or $descFallback (or $descEn $descPt) }}
+                <p class="post-row-excerpt">
+                  {{ partial "i18n_text.html" (dict "en" $descEn "ptbr" $descPt "fallback" $descFallback) }}
+                </p>
+              {{ end }}
             </li>
           {{ end }}
         </ul>
@@ -29,4 +41,3 @@
     </div>
   {{ partial "container_close.html" . }}
 {{ end }}
-

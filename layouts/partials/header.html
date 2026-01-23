@@ -8,8 +8,10 @@
       <nav class="nav" aria-label="Primary">
         <a class="nav-link" href="{{ "/" | relURL }}">Home</a>
         <a class="nav-link" href="{{ "/tags/" | relURL }}">Tags</a>
+        <span class="nav-sep" aria-hidden="true">·</span>
+        <button type="button" class="nav-link nav-lang-btn" data-global-lang="en" aria-pressed="false">EN</button>
+        <button type="button" class="nav-link nav-lang-btn" data-global-lang="pt-br" aria-pressed="false">PT-BR</button>
       </nav>
     </div>
   {{ partial "container_close.html" . }}
 </header>
-

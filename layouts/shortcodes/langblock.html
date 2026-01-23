@@ -1,0 +1,5 @@
+{{- $lang := (.Get "lang") | default "en" -}}
+
+<section class="langblock" data-lang="{{ $lang }}">
+  {{- .Inner | markdownify -}}
+</section>

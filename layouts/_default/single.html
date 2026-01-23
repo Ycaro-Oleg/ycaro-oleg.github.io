@@ -13,8 +13,18 @@
         {{ end }}
       </div>
 
-      <h1 class="article-title">{{ .Title }}</h1>
-      {{ with .Params.description }}<p class="muted" style="max-width: var(--content); margin-top: 0;">{{ . }}</p>{{ end }}
+      <h1 class="article-title">
+        {{ partial "i18n_text.html" (dict "en" .Params.title_en "ptbr" .Params.title_ptbr "fallback" .Title) }}
+      </h1>
+
+      {{ $descFallback := .Params.description }}
+      {{ $descEn := .Params.description_en }}
+      {{ $descPt := .Params.description_ptbr }}
+      {{ if or $descFallback (or $descEn $descPt) }}
+        <p class="muted" style="max-width: var(--content); margin-top: 0;">
+          {{ partial "i18n_text.html" (dict "en" $descEn "ptbr" $descPt "fallback" $descFallback) }}
+        </p>
+      {{ end }}
 
       <article class="article-prose">
         {{ .Content }}
@@ -22,4 +32,3 @@
     </div>
   {{ partial "container_close.html" . }}
 {{ end }}
-

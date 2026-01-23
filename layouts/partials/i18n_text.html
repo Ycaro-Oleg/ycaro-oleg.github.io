@@ -1,0 +1,6 @@
+{{- $en := .en | default "" -}}
+{{- $ptbr := .ptbr | default "" -}}
+{{- $fallback := .fallback | default "" -}}
+{{- $class := .class | default "i18n-text" -}}
+
+<span class="{{ $class }}" data-i18n-en="{{ $en }}" data-i18n-pt-br="{{ $ptbr }}">{{ $fallback }}</span>

@@ -1,10 +1,14 @@
 ---
 title: "My 0.2cents on AI"
+title_en: "My 0.2cents on AI"
+title_ptbr: "Meus 0,2 centavos sobre IA"
 date: 2026-01-22T12:00:00-03:00
 tags: ["AI"]
-description: "First post, written in Markdown, deployed via GitHub Pages and utilizing HUGO! and giving in my 0.2 cents on AI"
+description_en: "First post, written in Markdown, deployed via GitHub Pages and utilizing HUGO! and giving in my 0.2 cents on AI."
+description_ptbr: "Primeiro post, escrito em Markdown , deploy feito via github pages e utilizando o framework HUGO. Dando meus 2 centavos sobre IA"
 ---
-
+{{< langswitch default="en" >}}
+{{< langblock lang="en" >}}
 ### This is my first time using HUGO for static pages.
 
 At first, I tried deploying something with Ruby on Rails  but nah…
@@ -119,3 +123,123 @@ But people who:
 - And actually *want* to build things  
 
 I think they’re gonna be just fine.
+{{< /langblock >}}
+
+{{< langblock lang="pt-br" >}}
+
+### Esta é a minha primeira vez usando HUGO para páginas estáticas.
+
+No começo, tentei subir algo com Ruby on Rails, mas desisti…
+Muito complexo. Muito problema pra deploy. Dor de cabeça demais pra algo simples.
+
+Foi aí que acabei conhecendo o **HUGO**.
+
+E pronto… ficou sendo HUGO mesmo.
+
+---
+
+Acho que meu primeiro tema *tinha* que ser **IA**.
+
+Essa parada de Inteligência Artificial tá vindo **com força total**, tipo um trem bala sem freio.
+
+<img src="https://devhumor.com/content/uploads/images/May2024/ai_influencer.jpg" alt="drawing" width="400"/>
+
+---
+
+## O Influencer de IA do Twitter™
+
+Se você tem usado o Twitter ultimamente, provavelmente acabou vendo eles.
+
+Aqueles perfis de IA repetindo o tempo todo:
+
+> *“A IA vai acabar com seu emprego.
+> Com o meu.
+> Com o de todo mundo.”*
+
+E, sendo sincero?
+
+É… **eu até acredito em parte nisso.**
+Mas não acho que vai ser esse apocalipse todo que pintam por aí.
+
+---
+
+Não vou pagar de especialista — sou um **desenvolvedor de software pleno**.
+Mas, pela minha experiência, ainda existem várias camadas que a IA simplesmente não consegue alcançar.
+
+Pelo menos por enquanto.
+
+Principalmente quando falamos de:
+
+- Produtos complexos  
+- Regras de negócio confusas ou mal definidas  
+- Projetos que exigem **reuniões intermináveis** só pra entender o que o cliente realmente quer  
+
+Antes da IA chegar perto disso tudo, ainda existe uma **quantidade enorme de trabalho humano** envolvida.
+
+---
+
+## Um exemplo real
+
+Eu **com certeza não teria feito** este site em **30 minutos** se não fosse a IA.
+
+Eu:
+- Nunca tinha ouvido falar de HUGO  
+- Nunca tinha usado  
+- Nunca nem cogitado  
+
+Mas com:
+- Alguns prompts bem feitos  
+- Um pouco de leitura de documentação  
+
+Consegui montar um **weblog totalmente funcional**, incluindo um **design no Figma que também saiu de prompt**.
+
+Essa parte?
+
+Sendo bem honesto… **é absurdo de bom.**  
+Não tem como negar.
+
+---
+
+Mas isso ainda parece **só o começo**.
+
+A IA está chegando.  
+E sim, está chegando forte.
+
+Mas se você:
+- Sabe pensar e desenhar sistemas  
+- Se comunica bem  
+- Resolve problemas de verdade  
+
+Você vira um **ativo muito mais valioso** do que quatro agentes de código rodando 24/7
+
+---
+
+## A realidade sempre bate em produção
+
+No final do dia, alguém ainda precisa lidar com:
+
+- Problemas em produção  
+- Clientes que não sabem explicar o que querem  
+- Reuniões com pessoas reais  
+- Hotfixes extremamente delicados  
+
+Hotfixes que precisam ser feitos com **muito cuidado**.
+
+Porque, se não, produção vira:
+
+**Bang Bong Kaboom**  
+
+(Alô Cloudflare / AWS / etc)
+
+---
+
+Então é isso — a IA é boa pra caramba no que faz.
+
+Mas pessoas que:
+- Têm base sólida  
+- Sabem se comunicar  
+- E realmente *querem* construir coisas  
+
+Eu sinceramente acho que vão ficar muito bem.
+
+{{< /langblock >}}

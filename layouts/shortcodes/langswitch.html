@@ -1,0 +1,85 @@
+{{- $default := (.Get "default") | default "en" -}}
+
+<div class="langswitch" data-default="{{ $default }}">
+  <span class="langswitch-label">Language:</span>
+  <button type="button" class="langswitch-btn" data-lang="en" aria-pressed="false">EN</button>
+  <button type="button" class="langswitch-btn" data-lang="pt-br" aria-pressed="false">PT-BR</button>
+</div>
+
+<script>
+(() => {
+  if (window.__ycrLangSwitchInit) return;
+  window.__ycrLangSwitchInit = true;
+
+  const STORAGE_KEY = "ycr.lang";
+
+  const normalizeLang = (value) => {
+    const v = (value || "").toLowerCase();
+    if (v === "pt" || v.startsWith("pt-")) return "pt-br";
+    return "en";
+  };
+
+  const getInitialLang = (container) => {
+    try {
+      const stored = window.localStorage.getItem(STORAGE_KEY);
+      if (stored) return normalizeLang(stored);
+    } catch (_) {}
+
+    const def = container?.dataset?.default;
+    if (def) return normalizeLang(def);
+
+    return normalizeLang(document.documentElement.lang || navigator.language);
+  };
+
+  const findBlocks = (container) => {
+    const blocks = [];
+    let el = container.nextElementSibling;
+    while (el) {
+      if (el.classList && el.classList.contains("langswitch")) break;
+      if (el.classList && el.classList.contains("langblock")) blocks.push(el);
+      el = el.nextElementSibling;
+    }
+    return blocks;
+  };
+
+  const setLangForContainer = (container, lang) => {
+    const blocks = findBlocks(container);
+    blocks.forEach((block) => block.hidden = (block.dataset.lang !== lang));
+
+    const buttons = container.querySelectorAll(".langswitch-btn");
+    buttons.forEach((btn) => {
+      const active = btn.dataset.lang === lang;
+      btn.classList.toggle("is-active", active);
+      btn.setAttribute("aria-pressed", active ? "true" : "false");
+    });
+  };
+
+  const init = () => {
+    const containers = Array.from(document.querySelectorAll(".langswitch"));
+    containers.forEach((container) => {
+      const initial = getInitialLang(container);
+      setLangForContainer(container, initial);
+
+      container.addEventListener("click", (e) => {
+        const btn = e.target.closest(".langswitch-btn");
+        if (!btn) return;
+        const lang = normalizeLang(btn.dataset.lang);
+        setLangForContainer(container, lang);
+        try { window.localStorage.setItem(STORAGE_KEY, lang); } catch (_) {}
+        window.dispatchEvent(new CustomEvent("ycr:lang", { detail: { lang } }));
+      });
+    });
+
+    window.addEventListener("ycr:lang", (e) => {
+      const next = normalizeLang(e?.detail?.lang);
+      containers.forEach((container) => setLangForContainer(container, next));
+    });
+  };
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", init);
+  } else {
+    init();
+  }
+})();
+</script>

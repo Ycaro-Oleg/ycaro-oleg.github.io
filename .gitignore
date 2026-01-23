@@ -3,7 +3,7 @@
 /resources/
 /.hugo_build.lock
 /hugo_stats.json
-
+/README.md
 # OS/editor
 .DS_Store
 Thumbs.db

@@ -32,7 +32,9 @@
                         <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2" }}</time>
                       </div>
                       <h3 class="post-row-title archive-post-title">
-                        <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                        <a href="{{ .RelPermalink }}">
+                          {{ partial "i18n_text.html" (dict "en" .Params.title_en "ptbr" .Params.title_ptbr "fallback" .Title) }}
+                        </a>
                       </h3>
                     </li>
                   {{ end }}

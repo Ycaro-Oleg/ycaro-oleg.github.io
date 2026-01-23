@@ -34,11 +34,18 @@
                       </div>
 
                       <h2 class="post-row-title archive-post-title">
-                        <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                        <a href="{{ .RelPermalink }}">
+                          {{ partial "i18n_text.html" (dict "en" .Params.title_en "ptbr" .Params.title_ptbr "fallback" .Title) }}
+                        </a>
                       </h2>
 
-                      {{ with .Params.description }}
-                        <p class="post-row-excerpt">{{ . }}</p>
+                      {{ $descFallback := .Params.description }}
+                      {{ $descEn := .Params.description_en }}
+                      {{ $descPt := .Params.description_ptbr }}
+                      {{ if or $descFallback (or $descEn $descPt) }}
+                        <p class="post-row-excerpt">
+                          {{ partial "i18n_text.html" (dict "en" $descEn "ptbr" $descPt "fallback" $descFallback) }}
+                        </p>
                       {{ end }}
 
                       {{ with .Params.tags }}

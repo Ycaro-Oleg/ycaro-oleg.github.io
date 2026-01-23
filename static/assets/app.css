@@ -164,6 +164,18 @@ select:focus-visible {
   background: rgba(245, 196, 0, 0.06);
 }
 
+.nav-link.is-active {
+  opacity: 1;
+  border-color: rgba(245, 196, 0, 0.35);
+  background: rgba(245, 196, 0, 0.06);
+}
+
+.nav-sep {
+  color: var(--muted);
+  opacity: 0.8;
+  user-select: none;
+}
+
 .page {
   min-height: 100%;
   display: flex;
@@ -216,6 +228,43 @@ select:focus-visible {
   margin: 0;
   padding: 0;
   list-style: none;
+}
+
+.langswitch {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 10px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: rgba(18, 18, 23, 0.35);
+  margin: 18px 0 8px;
+}
+
+.langswitch-label {
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.langswitch-btn {
+  appearance: none;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  padding: 6px 10px;
+  background: transparent;
+  color: var(--text);
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.langswitch-btn:hover {
+  border-color: var(--border);
+  background: rgba(18, 18, 23, 0.55);
+}
+
+.langswitch-btn.is-active {
+  border-color: rgba(245, 196, 0, 0.35);
+  background: rgba(245, 196, 0, 0.08);
 }
 
 .post-row {

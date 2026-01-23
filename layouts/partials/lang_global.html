@@ -1,0 +1,77 @@
+<script>
+(() => {
+  if (window.__ycrLangGlobalInit) return;
+  window.__ycrLangGlobalInit = true;
+
+  const STORAGE_KEY = "ycr.lang";
+
+  const normalizeLang = (value) => {
+    const v = (value || "").toLowerCase();
+    if (v === "pt" || v.startsWith("pt-")) return "pt-br";
+    return "en";
+  };
+
+  const getStoredLang = () => {
+    try { return window.localStorage.getItem(STORAGE_KEY); } catch (_) { return null; }
+  };
+
+  const resolveLang = () => {
+    const stored = getStoredLang();
+    if (stored) return normalizeLang(stored);
+    return normalizeLang(document.documentElement.lang || navigator.language);
+  };
+
+  const applyI18nText = (lang) => {
+    document.querySelectorAll("[data-i18n-en], [data-i18n-pt-br]").forEach((el) => {
+      const en = el.dataset.i18nEn || "";
+      const ptbr = el.dataset.i18nPtBr || "";
+      const next = (lang === "pt-br" ? ptbr : en) || "";
+      if (next) el.textContent = next;
+    });
+  };
+
+  const syncLangButtons = (lang) => {
+    document.querySelectorAll("[data-global-lang]").forEach((btn) => {
+      const active = normalizeLang(btn.dataset.globalLang) === lang;
+      btn.classList.toggle("is-active", active);
+      btn.setAttribute("aria-pressed", active ? "true" : "false");
+    });
+  };
+
+  const setLang = (lang) => {
+    const normalized = normalizeLang(lang);
+    try { window.localStorage.setItem(STORAGE_KEY, normalized); } catch (_) {}
+    document.documentElement.lang = normalized;
+    applyI18nText(normalized);
+    syncLangButtons(normalized);
+  };
+
+  const init = () => {
+    const initial = resolveLang();
+    setLang(initial);
+
+    document.addEventListener("click", (e) => {
+      const btn = e.target.closest("[data-global-lang]");
+      if (!btn) return;
+      setLang(btn.dataset.globalLang);
+      window.dispatchEvent(new CustomEvent("ycr:lang", { detail: { lang: normalizeLang(btn.dataset.globalLang) } }));
+    });
+
+    window.addEventListener("ycr:lang", (e) => {
+      if (!e?.detail?.lang) return;
+      setLang(e.detail.lang);
+    });
+
+    window.addEventListener("storage", (e) => {
+      if (e.key !== STORAGE_KEY) return;
+      setLang(e.newValue);
+    });
+  };
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", init);
+  } else {
+    init();
+  }
+})();
+</script>
