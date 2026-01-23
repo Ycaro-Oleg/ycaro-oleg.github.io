@@ -111,7 +111,7 @@ select:focus-visible {
 
 @media (min-width: 768px) {
   .site-header {
-    height: 72px;
+    height: 100px;
   }
 }
 
@@ -127,10 +127,28 @@ select:focus-visible {
   color: var(--text);
   font-weight: 650;
   letter-spacing: -0.01em;
+  display: inline-flex;
+  align-items: center;
+  line-height: 1;
+  height: 100%;
 }
 
 .wordmark:hover {
   text-decoration: none;
+}
+
+.wordmark-logo {
+  height: 50px;
+  width: auto;
+  display: block;
+  object-fit: contain;
+  max-height: calc(100% - 8px);
+}
+
+@media (min-width: 768px) {
+  .wordmark-logo {
+    height: 110px;
+  }
 }
 
 .nav {

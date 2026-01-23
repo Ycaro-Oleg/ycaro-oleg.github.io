@@ -2,7 +2,15 @@
   {{ partial "container_open.html" . }}
     <div class="site-header-inner">
       <div class="flex items-center gap-3">
-        <a class="wordmark" href="{{ "/" | relURL }}">{{ .Site.Title }}</a>
+        <a href="{{ "/" | relURL }}">
+          <img
+            class="wordmark-logo"
+            src="{{ "ycr_mind_transparent.png" | relURL }}"
+            alt="{{ .Site.Title }}"
+            decoding="async"
+          />
+          <span class="sr-only">{{ .Site.Title }}</span>
+        </a>
       </div>
 
       <nav class="nav" aria-label="Primary">

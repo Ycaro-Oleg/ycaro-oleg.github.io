@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 220" role="img" aria-label="YCR Mind">
+  <!-- background branco -->
+  <rect width="220" height="220" fill="#FFFFFF"></rect>
+
+  <style>
+    .ycr {
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      font-weight: 900;
+      fill: #111111;
+      letter-spacing: 1px;
+    }
+    .mind {
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      font-weight: 800;
+      fill: #F5C400;
+      opacity: 0.85;
+      letter-spacing: 2px;
+    }
+  </style>
+
+  <!-- MIND atrás (offset) -->
+  <text x="114" y="142" class="mind" font-size="62" text-anchor="middle">
+    MIND
+  </text>
+
+  <!-- YCR frente -->
+  <text x="110" y="132" class="ycr" font-size="90" text-anchor="middle">
+    YCR
+  </text>
+</svg>
