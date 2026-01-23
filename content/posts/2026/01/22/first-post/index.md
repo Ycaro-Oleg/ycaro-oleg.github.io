@@ -11,8 +11,8 @@ description_ptbr: "Primeiro post, escrito em Markdown , deploy feito via github 
 {{< langblock lang="en" >}}
 ### This is my first time using HUGO for static pages.
 
-At first, I tried deploying something with Ruby on Rails  but nah…
-Too complicated. Too much deploy drama. Too much everything.
+At first, I thought about deploying this weblog with Ruby on Rails, but nah…
+I could do something simpler and faster , too much deploy drama.
 
 So I ended up discovering **HUGO**.
 
@@ -129,8 +129,8 @@ I think they’re gonna be just fine.
 
 ### Esta é a minha primeira vez usando HUGO para páginas estáticas.
 
-No começo, tentei subir algo com Ruby on Rails, mas desisti…
-Muito complexo. Muito problema pra deploy. Dor de cabeça demais pra algo simples.
+No começo, pensei em fazer o deploy desse weblog com Ruby on Rails, mas não
+Dava pra fazer algo mais simples e mais rápido. Muito drama de deploy.
 
 Foi aí que acabei conhecendo o **HUGO**.
 
