@@ -2,7 +2,7 @@
 title: "Brex sold and thoughts on it"
 title_en: "Brex sold and thoughts on it"
 title_ptbr: "Brex vendida e minhas ideias quanto a isso"
-date: 2026-01-22T12:00:00-03:00
+date: 2026-01-23T21:24:00-03:00
 tags: ["Startup", "YC", "Motivation"]
 description_en: "Some thoughts on the Brex selling by 5,15 Billion dollars , company made by : Pedro Franceschi(28) and Henrique Dubugras(30)"
 description_ptbr: "Algumas ideias na venda da Brex por 5,15 Bilhões de dólares, empresa fundada por : Pedro Franceschi(28) e Henrique Dubugras(30)"
