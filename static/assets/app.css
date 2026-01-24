@@ -404,6 +404,8 @@ select:focus-visible {
 
 .article-shell {
   padding: 30px 0 46px;
+  max-width: var(--content);
+  margin: 0 auto;
 }
 
 .article-meta {
@@ -426,6 +428,14 @@ select:focus-visible {
 
 .article-prose {
   max-width: var(--content);
+  margin: 0 auto;
+}
+
+.article-prose img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 18px auto;
 }
 
 .article-prose p {
