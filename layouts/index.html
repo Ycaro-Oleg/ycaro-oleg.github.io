@@ -1,94 +1,240 @@
 {{ define "main" }}
   {{ partial "container_open.html" . }}
-    <div class="py-6 md:py-8">
-      <section class="hero">
-        <h1>{{ .Site.Title }}</h1>
-        <p>{{ .Site.Params.description }}</p>
-        <div class="accent-rule"></div>
-      </section>
+
+    <!-- HERO -->
+    <section class="hero-landing">
+      <div class="hero-landing-content">
+        <h1 class="hero-name">Ycaro Pires</h1>
+        <p class="hero-title">Software Engineer</p>
+        <p class="hero-headline">
+          {{ partial "i18n_text.html" (dict
+            "en" "Solving real problems with code"
+            "ptbr" "Resolvendo problemas reais com codigo"
+            "fallback" "Solving real problems with code"
+          ) }}
+        </p>
+        <p class="hero-tagline">
+          {{ partial "i18n_text.html" (dict
+            "en" "3+ years delivering mission-critical systems for government and enterprise clients. From backend APIs and system integrations to frontend interfaces and AI-powered solutions I build whatever the project needs."
+            "ptbr" "3+ anos entregando sistemas de missao critica para clientes governamentais e corporativos. De APIs backend e integracoes de sistemas a interfaces frontend e solucoes com IA — eu construo o que o projeto precisar."
+            "fallback" "3+ years delivering mission-critical systems for government and enterprise clients. From backend APIs and system integrations to frontend interfaces and AI-powered solutions I build whatever the project needs."
+          ) }}
+        </p>
+        <div class="hero-actions">
+          {{ partial "social_links.html" . }}
+          <a href="mailto:ycaro.oleg.job@gmail.com" class="hero-cta">
+            {{ partial "i18n_text.html" (dict "en" "Get in touch" "ptbr" "Entre em contato" "fallback" "Get in touch") }}
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <div class="accent-rule"></div>
+
+    <!-- ABOUT -->
+    <section class="section" id="about">
+      <h2 class="section-heading">
+        {{ partial "i18n_text.html" (dict "en" "About" "ptbr" "Sobre" "fallback" "About") }}
+      </h2>
+      <div class="about-grid">
+        <div class="about-text">
+          <p>
+            {{ partial "i18n_text.html" (dict
+              "en" "Software Engineer with 3+ years of experience building mission-critical systems for government and enterprise clients across Brazil. I work across the full stack from backend APIs and system integrations to frontend interfaces using Ruby on Rails, React, PostgreSQL, and whatever the project demands."
+              "ptbr" "Engenheiro de Software com 3+ anos de experiencia construindo sistemas de missao critica para clientes governamentais e corporativos em todo o Brasil. Atuo em toda a stack de APIs backend e integracoes de sistemas a interfaces frontend usando Ruby on Rails, React, PostgreSQL e o que o projeto exigir."
+              "fallback" "Software Engineer with 3+ years of experience building mission-critical systems for government and enterprise clients across Brazil. I work across the full stack from backend APIs and system integrations to frontend interfaces using Ruby on Rails, React, PostgreSQL, and whatever the project demands."
+            ) }}
+          </p>
+          <p>
+            {{ partial "i18n_text.html" (dict
+              "en" "B.S. in Systems Analysis and Development from Universidade Estacio de Sa (GPA 3.7/4.0). I enjoy writing about software engineering, sharing what I learn, and building side projects that solve real problems."
+              "ptbr" "Bacharel em Analise e Desenvolvimento de Sistemas pela Universidade Estacio de Sa (CR 9.0/10). Gosto de escrever sobre engenharia de software, compartilhar o que aprendo e construir projetos que resolvem problemas reais."
+              "fallback" "B.S. in Systems Analysis and Development from Universidade Estacio de Sa (GPA 3.7/4.0). I enjoy writing about software engineering, sharing what I learn, and building side projects that solve real problems."
+            ) }}
+          </p>
+        </div>
+        <div class="about-details">
+          <div class="about-detail-item">
+            <span class="about-detail-label">
+              {{ partial "i18n_text.html" (dict "en" "Location" "ptbr" "Localizacao" "fallback" "Location") }}
+            </span>
+            <span>Brazil</span>
+          </div>
+          <div class="about-detail-item">
+            <span class="about-detail-label">
+              {{ partial "i18n_text.html" (dict "en" "Languages" "ptbr" "Idiomas" "fallback" "Languages") }}
+            </span>
+            <span>
+              {{ partial "i18n_text.html" (dict
+                "en" "Portuguese (native), English (fluent), Spanish (basic)"
+                "ptbr" "Portugues (nativo), Ingles (fluente), Espanhol (basico)"
+                "fallback" "Portuguese (native), English (fluent), Spanish (basic)"
+              ) }}
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="accent-rule"></div>
+
+    <!-- SKILLS -->
+    <section class="section" id="skills">
+      <h2 class="section-heading">
+        {{ partial "i18n_text.html" (dict "en" "Skills" "ptbr" "Habilidades" "fallback" "Skills") }}
+      </h2>
+      <div class="skills-grid">
+        <div class="skill-category">
+          <h3 class="skill-category-title">Backend</h3>
+          <div class="skill-tags">
+            <span class="skill-tag">Ruby</span>
+            <span class="skill-tag">Ruby on Rails</span>
+            <span class="skill-tag">PostgreSQL</span>
+            <span class="skill-tag">Sidekiq</span>
+            <span class="skill-tag">SQL</span>
+            <span class="skill-tag">Node.js</span>
+          </div>
+        </div>
+        <div class="skill-category">
+          <h3 class="skill-category-title">Frontend</h3>
+          <div class="skill-tags">
+            <span class="skill-tag">JavaScript</span>
+            <span class="skill-tag">React.js</span>
+            <span class="skill-tag">Next.js</span>
+            <span class="skill-tag">HTML5</span>
+            <span class="skill-tag">CSS</span>
+          </div>
+        </div>
+        <div class="skill-category">
+          <h3 class="skill-category-title">
+            {{ partial "i18n_text.html" (dict "en" "Tools & Practices" "ptbr" "Ferramentas & Praticas" "fallback" "Tools & Practices") }}
+          </h3>
+          <div class="skill-tags">
+            <span class="skill-tag">Git</span>
+            <span class="skill-tag">CI/CD</span>
+            <span class="skill-tag">AI API Integration</span>
+            <span class="skill-tag">Postman</span>
+            <span class="skill-tag">Background Jobs</span>
+            <span class="skill-tag">OOP / SOLID</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="accent-rule"></div>
+
+    <!-- PROJECTS -->
+    <section class="section" id="projects">
+      <h2 class="section-heading">
+        {{ partial "i18n_text.html" (dict "en" "Projects" "ptbr" "Projetos" "fallback" "Projects") }}
+      </h2>
+      <div class="projects-grid">
+
+        <a href="https://github.com/Ycaro-Oleg/Verdikt" class="project-card" target="_blank" rel="noopener">
+          <div class="project-card-header">
+            <h3 class="project-card-title">Verdikt</h3>
+            <span class="project-card-arrow">&rarr;</span>
+          </div>
+          <p class="project-card-desc">
+            {{ partial "i18n_text.html" (dict
+              "en" "AI-powered purchase advisor. Paste a product URL and get an instant verdict — BUY, WAIT, OVERPAYING, or GREAT DEAL. Built with Rails 8, PostgreSQL, Sidekiq, and Claude API."
+              "ptbr" "Consultor de compras com IA. Cole a URL de um produto e receba um veredito instantaneo — COMPRE, ESPERE, PAGANDO CARO ou OTIMO NEGOCIO. Feito com Rails 8, PostgreSQL, Sidekiq e Claude API."
+              "fallback" "AI-powered purchase advisor. Paste a product URL and get an instant verdict — BUY, WAIT, OVERPAYING, or GREAT DEAL. Built with Rails 8, PostgreSQL, Sidekiq, and Claude API."
+            ) }}
+          </p>
+          <div class="project-card-stack">
+            <span class="skill-tag">Rails 8</span>
+            <span class="skill-tag">PostgreSQL</span>
+            <span class="skill-tag">Sidekiq</span>
+            <span class="skill-tag">Claude API</span>
+            <span class="skill-tag">Stripe</span>
+          </div>
+        </a>
+
+        <div class="project-card project-card--placeholder">
+          <div class="project-card-header">
+            <h3 class="project-card-title">
+              {{ partial "i18n_text.html" (dict "en" "Coming Soon" "ptbr" "Em Breve" "fallback" "Coming Soon") }}
+            </h3>
+          </div>
+          <p class="project-card-desc muted">
+            {{ partial "i18n_text.html" (dict
+              "en" "A new project is in the works. Stay tuned."
+              "ptbr" "Um novo projeto esta em desenvolvimento. Fique ligado."
+              "fallback" "A new project is in the works. Stay tuned."
+            ) }}
+          </p>
+        </div>
+
+        <div class="project-card project-card--placeholder">
+          <div class="project-card-header">
+            <h3 class="project-card-title">
+              {{ partial "i18n_text.html" (dict "en" "Coming Soon" "ptbr" "Em Breve" "fallback" "Coming Soon") }}
+            </h3>
+          </div>
+          <p class="project-card-desc muted">
+            {{ partial "i18n_text.html" (dict
+              "en" "A new project is in the works. Stay tuned."
+              "ptbr" "Um novo projeto esta em desenvolvimento. Fique ligado."
+              "fallback" "A new project is in the works. Stay tuned."
+            ) }}
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <div class="accent-rule"></div>
+
+    <!-- LATEST POSTS -->
+    <section class="section" id="blog">
+      <div class="section-heading-row">
+        <h2 class="section-heading">
+          {{ partial "i18n_text.html" (dict "en" "Latest Posts" "ptbr" "Ultimos Posts" "fallback" "Latest Posts") }}
+        </h2>
+        <a href="{{ "/posts/" | relURL }}" class="section-link">
+          {{ partial "i18n_text.html" (dict "en" "View all" "ptbr" "Ver todos" "fallback" "View all") }} &rarr;
+        </a>
+      </div>
 
       {{ $posts := sort (where .Site.RegularPages "Section" "posts") "Date" "desc" }}
       {{ if gt (len $posts) 0 }}
-        {{ $groups := $posts.GroupByDate "2006-01" }}
-        <div class="archive-layout">
-          <div class="archive-main">
-            {{ range $groups }}
-              {{ $groupDate := time (printf "%s-01" .Key) }}
-              {{ $year := $groupDate.Format "2006" }}
-              {{ $monthName := $groupDate.Format "January" }}
-              {{ $sectionId := printf "home-ym-%s" .Key }}
-
-              <section id="{{ $sectionId }}" class="archive-section">
-                <h2 class="archive-heading">
-                  <span class="archive-year">{{ $year }}</span>
-                  <span class="muted">·</span>
-                  <span class="archive-month">{{ $monthName }}</span>
-                </h2>
-
-                <ul class="post-list">
-                  {{ range .Pages }}
-                    <li class="post-row archive-post-row">
-                      <div class="post-row-meta">
-                        <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
-                        <span aria-hidden="true">·</span>
-                      </div>
-
-                      <h2 class="post-row-title archive-post-title">
-                        <a href="{{ .RelPermalink }}">
-                          {{ partial "i18n_text.html" (dict "en" .Params.title_en "ptbr" .Params.title_ptbr "fallback" .Title) }}
-                        </a>
-                      </h2>
-
-                      {{ $descFallback := .Params.description }}
-                      {{ $descEn := .Params.description_en }}
-                      {{ $descPt := .Params.description_ptbr }}
-                      {{ if or $descFallback (or $descEn $descPt) }}
-                        <p class="post-row-excerpt">
-                          {{ partial "i18n_text.html" (dict "en" $descEn "ptbr" $descPt "fallback" $descFallback) }}
-                        </p>
-                      {{ end }}
-
-                      {{ with .Params.tags }}
-                        <div class="tag-row" aria-label="Tags">
-                          {{ range first 4 . }}
-                            <a class="tag-chip" href="{{ (printf "/tags/%s/" (. | urlize)) | relURL }}">{{ . }}</a>
-                          {{ end }}
-                        </div>
-                      {{ end }}
-                    </li>
+        <ul class="post-list">
+          {{ range first 3 $posts }}
+            <li class="post-row">
+              <div class="post-row-meta">
+                <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
+                <span aria-hidden="true">&middot;</span>
+              </div>
+              <h3 class="post-row-title">
+                <a href="{{ .RelPermalink }}">
+                  {{ partial "i18n_text.html" (dict "en" .Params.title_en "ptbr" .Params.title_ptbr "fallback" .Title) }}
+                </a>
+              </h3>
+              {{ $descFallback := .Params.description }}
+              {{ $descEn := .Params.description_en }}
+              {{ $descPt := .Params.description_ptbr }}
+              {{ if or $descFallback (or $descEn $descPt) }}
+                <p class="post-row-excerpt">
+                  {{ partial "i18n_text.html" (dict "en" $descEn "ptbr" $descPt "fallback" $descFallback) }}
+                </p>
+              {{ end }}
+              {{ with .Params.tags }}
+                <div class="tag-row" aria-label="Tags">
+                  {{ range first 4 . }}
+                    <a class="tag-chip" href="{{ (printf "/tags/%s/" (. | urlize)) | relURL }}">{{ . }}</a>
                   {{ end }}
-                </ul>
-              </section>
-            {{ end }}
-          </div>
-
-          <aside class="archive-toc" aria-label="Home navigation">
-            <div class="archive-toc-inner">
-              <div class="archive-toc-title">Jump</div>
-              <nav>
-                <ul class="archive-toc-list">
-                  {{ range $groups }}
-                    {{ $groupDate := time (printf "%s-01" .Key) }}
-                    {{ $year := $groupDate.Format "2006" }}
-                    {{ $monthName := $groupDate.Format "January" }}
-                    {{ $sectionId := printf "home-ym-%s" .Key }}
-                    <li>
-                      <a class="archive-toc-link" href="#{{ $sectionId }}">{{ $year }} · {{ $monthName }}</a>
-                    </li>
-                  {{ end }}
-                </ul>
-              </nav>
-            </div>
-          </aside>
-        </div>
-
-        {{ partial "social_links.html" . }}
+                </div>
+              {{ end }}
+            </li>
+          {{ end }}
+        </ul>
       {{ else }}
         <div class="empty-state">
-          <p>No posts yet.</p>
-          <p>Add Markdown under <span class="mono">content/posts/YYYY/MM/DD/slug/index.md</span>.</p>
+          <p>{{ partial "i18n_text.html" (dict "en" "No posts yet." "ptbr" "Nenhum post ainda." "fallback" "No posts yet.") }}</p>
         </div>
       {{ end }}
-    </div>
+    </section>
+
   {{ partial "container_close.html" . }}
 {{ end }}
