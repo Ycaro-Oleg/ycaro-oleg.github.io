@@ -933,3 +933,243 @@ a.project-card:hover {
   flex-wrap: wrap;
   gap: 6px;
 }
+
+/* ===== RESUME PAGE ===== */
+
+.resume-page {
+  padding: 36px 0 48px;
+  max-width: var(--content);
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .resume-page {
+    padding: 48px 0 64px;
+    max-width: 880px;
+  }
+}
+
+.resume-header {
+  padding-bottom: 28px;
+}
+
+.resume-header-main {
+  margin-bottom: 20px;
+}
+
+.resume-name {
+  margin: 0 0 6px;
+  font-weight: 800;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+}
+
+.resume-title {
+  margin: 0;
+  font-size: clamp(1rem, 1.6vw, 1.15rem);
+  color: var(--accent);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.resume-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.resume-contact-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--muted);
+  font-size: 0.93rem;
+}
+
+.resume-contact-item a {
+  color: var(--muted);
+}
+
+.resume-contact-item a:hover {
+  color: var(--text);
+}
+
+.resume-icon {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+.resume-contact-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 6px;
+}
+
+.resume-contact-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  color: var(--text);
+  font-size: 0.88rem;
+  font-weight: 500;
+}
+
+.resume-contact-links a:hover {
+  border-color: rgba(245, 196, 0, 0.35);
+  text-decoration: none;
+}
+
+.resume-contact-links .resume-icon {
+  width: 14px;
+  height: 14px;
+}
+
+/* Resume Sections */
+.resume-section {
+  padding: 24px 0;
+}
+
+.resume-section-title {
+  margin: 0 0 20px;
+  font-size: 1.2rem;
+  font-weight: 750;
+  letter-spacing: -0.01em;
+  color: var(--accent);
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  letter-spacing: 0.08em;
+}
+
+.resume-summary {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.7;
+  font-size: 1rem;
+}
+
+/* Resume Entries (Experience, Education, etc.) */
+.resume-entry {
+  padding: 16px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.resume-entry:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.resume-entry:first-child {
+  padding-top: 0;
+}
+
+.resume-entry-header {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 12px;
+}
+
+@media (min-width: 768px) {
+  .resume-entry-header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 16px;
+  }
+}
+
+.resume-entry-title {
+  margin: 0;
+  font-size: 1.08rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.resume-entry-company {
+  color: var(--muted);
+  font-size: 0.93rem;
+}
+
+.resume-entry-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  color: var(--muted);
+  font-size: 0.88rem;
+  white-space: nowrap;
+}
+
+@media (min-width: 768px) {
+  .resume-entry-meta {
+    align-items: flex-end;
+    text-align: right;
+  }
+}
+
+.resume-entry-list {
+  margin: 0;
+  padding-left: 1.2rem;
+}
+
+.resume-entry-list li {
+  margin: 8px 0;
+  color: var(--muted);
+  line-height: 1.6;
+  font-size: 0.93rem;
+}
+
+.resume-entry-desc {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.6;
+  font-size: 0.93rem;
+}
+
+/* Resume Skills */
+.resume-skills-grid {
+  display: grid;
+  gap: 20px;
+}
+
+@media (min-width: 768px) {
+  .resume-skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.resume-skill-group {
+  padding: 16px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: rgba(18, 18, 23, 0.35);
+}
+
+.resume-skill-label {
+  margin: 0 0 10px;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* Resume CTA */
+.resume-cta-section {
+  text-align: center;
+  padding: 36px 0;
+}
+
+.resume-cta-text {
+  margin: 0 0 18px;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--muted);
+}

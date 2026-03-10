@@ -1,0 +1,442 @@
+{{ define "main" }}
+  {{ partial "container_open.html" . }}
+
+    <div class="resume-page">
+
+      <!-- HEADER -->
+      <header class="resume-header">
+        <div class="resume-header-main">
+          <h1 class="resume-name">Ycaro Pires</h1>
+          <p class="resume-title">
+            {{ partial "i18n_text.html" (dict "en" "Full-Stack Software Engineer" "ptbr" "Engenheiro de Software Full-Stack" "fallback" "Full-Stack Software Engineer") }}
+          </p>
+        </div>
+        <div class="resume-contact">
+          <div class="resume-contact-item">
+            <svg class="resume-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            <a href="mailto:ycaro.oleg.job@gmail.com">ycaro.oleg.job@gmail.com</a>
+          </div>
+          <div class="resume-contact-item">
+            <svg class="resume-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>Fortaleza/CE, Brasil</span>
+          </div>
+          <div class="resume-contact-item">
+            <svg class="resume-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <span>+55 (85) 98982-8279</span>
+          </div>
+          <div class="resume-contact-links">
+            <a href="https://www.linkedin.com/in/ycaro-pires-944297240/" target="_blank" rel="noopener">
+              <svg class="resume-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+              LinkedIn
+            </a>
+            <a href="https://github.com/Ycaro-Oleg" target="_blank" rel="noopener">
+              <svg class="resume-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+              GitHub
+            </a>
+            <a href="https://ycaro-oleg.github.io/" target="_blank" rel="noopener">
+              <svg class="resume-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+              Portfolio
+            </a>
+          </div>
+        </div>
+      </header>
+
+      <div class="accent-rule"></div>
+
+      <!-- SUMMARY -->
+      <section class="resume-section">
+        <h2 class="resume-section-title">
+          {{ partial "i18n_text.html" (dict "en" "Summary" "ptbr" "Resumo" "fallback" "Summary") }}
+        </h2>
+        <p class="resume-summary">
+          {{ partial "i18n_text.html" (dict
+            "en" "Backend Software Engineer with 3+ years of experience using Ruby and Ruby on Rails in production, building scalable, high-availability systems and API-driven services. Strong background in system integrations, background job processing, and CI/CD environments, with solid knowledge of OOP and SOLID principles. Experience integrating AI-powered solutions via external APIs, applying AI to automate workflows and improve productivity."
+            "ptbr" "Engenheiro de Software Backend com 3+ anos de experiencia usando Ruby e Ruby on Rails em producao, construindo sistemas escalaveis e de alta disponibilidade e servicos orientados a API. Solida experiencia em integracoes de sistemas, processamento de jobs em background e ambientes de CI/CD, com conhecimento solido de OOP e principios SOLID. Experiencia integrando solucoes com IA via APIs externas, aplicando IA para automatizar fluxos de trabalho e melhorar produtividade."
+            "fallback" "Backend Software Engineer with 3+ years of experience using Ruby and Ruby on Rails in production, building scalable, high-availability systems and API-driven services. Strong background in system integrations, background job processing, and CI/CD environments, with solid knowledge of OOP and SOLID principles. Experience integrating AI-powered solutions via external APIs, applying AI to automate workflows and improve productivity."
+          ) }}
+        </p>
+      </section>
+
+      <div class="accent-rule"></div>
+
+      <!-- EXPERIENCE -->
+      <section class="resume-section">
+        <h2 class="resume-section-title">
+          {{ partial "i18n_text.html" (dict "en" "Professional Experience" "ptbr" "Experiencia Profissional" "fallback" "Professional Experience") }}
+        </h2>
+
+        <!-- Mid-level -->
+        <div class="resume-entry">
+          <div class="resume-entry-header">
+            <div>
+              <h3 class="resume-entry-title">
+                {{ partial "i18n_text.html" (dict "en" "Mid-level Software Engineer" "ptbr" "Engenheiro de Software Pleno" "fallback" "Mid-level Software Engineer") }}
+              </h3>
+              <span class="resume-entry-company">Coreplan</span>
+            </div>
+            <div class="resume-entry-meta">
+              <span>04/2025 &ndash; {{ partial "i18n_text.html" (dict "en" "Present" "ptbr" "Atual" "fallback" "Present") }}</span>
+              <span>Brazil</span>
+            </div>
+          </div>
+          <ul class="resume-entry-list">
+            <li>
+              {{ partial "i18n_text.html" (dict
+                "en" "Took ownership of mission-critical system integrations, including a strategic integration with the DJE (Diario da Justica Eletronica), enabling a new official communication channel between the platform and judicial systems, expanding product capabilities and increasing institutional adoption."
+                "ptbr" "Assumiu a responsabilidade por integracoes de sistemas de missao critica, incluindo uma integracao estrategica com o DJE (Diario da Justica Eletronica), habilitando um novo canal oficial de comunicacao entre a plataforma e sistemas judiciais, expandindo capacidades do produto e aumentando a adocao institucional."
+                "fallback" "Took ownership of mission-critical system integrations, including a strategic integration with the DJE (Diario da Justica Eletronica), enabling a new official communication channel between the platform and judicial systems, expanding product capabilities and increasing institutional adoption."
+              ) }}
+            </li>
+            <li>
+              {{ partial "i18n_text.html" (dict
+                "en" "Acted as a key contributor in cross-team collaborations (engineering, product, and business), aligning technical decisions with legal and operational requirements to ensure compliance, reliability, and long-term maintainability."
+                "ptbr" "Atuou como contribuidor chave em colaboracoes entre equipes (engenharia, produto e negocios), alinhando decisoes tecnicas com requisitos legais e operacionais para garantir conformidade, confiabilidade e manutenibilidade a longo prazo."
+                "fallback" "Acted as a key contributor in cross-team collaborations (engineering, product, and business), aligning technical decisions with legal and operational requirements to ensure compliance, reliability, and long-term maintainability."
+              ) }}
+            </li>
+            <li>
+              {{ partial "i18n_text.html" (dict
+                "en" "Designed and implemented robust integration flows with external judicial services, improving data consistency, traceability, and delivery speed of legal communications for public-sector clients."
+                "ptbr" "Projetou e implementou fluxos de integracao robustos com servicos judiciais externos, melhorando a consistencia de dados, rastreabilidade e velocidade de entrega de comunicacoes legais para clientes do setor publico."
+                "fallback" "Designed and implemented robust integration flows with external judicial services, improving data consistency, traceability, and delivery speed of legal communications for public-sector clients."
+              ) }}
+            </li>
+            <li>
+              {{ partial "i18n_text.html" (dict
+                "en" "Proactively identified system limitations and proposed architectural and process improvements that reduced operational friction, mitigated production risks, and supported scalable growth across multiple State Attorney General Offices."
+                "ptbr" "Identificou proativamente limitacoes do sistema e propôs melhorias arquiteturais e de processo que reduziram o atrito operacional, mitigaram riscos de producao e apoiaram o crescimento escalavel em multiplas Procuradorias-Gerais do Estado."
+                "fallback" "Proactively identified system limitations and proposed architectural and process improvements that reduced operational friction, mitigated production risks, and supported scalable growth across multiple State Attorney General Offices."
+              ) }}
+            </li>
+            <li>
+              {{ partial "i18n_text.html" (dict
+                "en" "Served as a technical reference for complex features and integrations, supporting teammates through code reviews, technical discussions, and solution design, increasing overall team efficiency and delivery confidence."
+                "ptbr" "Serviu como referencia tecnica para features complexas e integracoes, apoiando colegas atraves de code reviews, discussoes tecnicas e design de solucoes, aumentando a eficiencia geral da equipe e a confianca nas entregas."
+                "fallback" "Served as a technical reference for complex features and integrations, supporting teammates through code reviews, technical discussions, and solution design, increasing overall team efficiency and delivery confidence."
+              ) }}
+            </li>
+            <li>
+              {{ partial "i18n_text.html" (dict
+                "en" "Contributed directly to business continuity and revenue protection by ensuring high availability of critical features, monitoring production behavior, and responding quickly to high-impact incidents."
+                "ptbr" "Contribuiu diretamente para a continuidade do negocio e protecao de receita, garantindo alta disponibilidade de features criticas, monitorando o comportamento em producao e respondendo rapidamente a incidentes de alto impacto."
+                "fallback" "Contributed directly to business continuity and revenue protection by ensuring high availability of critical features, monitoring production behavior, and responding quickly to high-impact incidents."
+              ) }}
+            </li>
+            <li>
+              {{ partial "i18n_text.html" (dict
+                "en" "Participated in the integration of an AI-powered solution using external APIs and backend services, working on flow orchestration, data handling, and response validation for use in an enterprise environment."
+                "ptbr" "Participou da integracao de uma solucao com IA usando APIs externas e servicos backend, trabalhando em orquestracao de fluxos, tratamento de dados e validacao de respostas para uso em ambiente corporativo."
+                "fallback" "Participated in the integration of an AI-powered solution using external APIs and backend services, working on flow orchestration, data handling, and response validation for use in an enterprise environment."
+              ) }}
+            </li>
+            <li>
+              {{ partial "i18n_text.html" (dict
+                "en" "Worked with high-availability systems, monitoring production behavior and supporting CI/CD-driven deployments."
+                "ptbr" "Trabalhou com sistemas de alta disponibilidade, monitorando comportamento em producao e apoiando deployments orientados por CI/CD."
+                "fallback" "Worked with high-availability systems, monitoring production behavior and supporting CI/CD-driven deployments."
+              ) }}
+            </li>
+          </ul>
+        </div>
+
+        <!-- Junior -->
+        <div class="resume-entry">
+          <div class="resume-entry-header">
+            <div>
+              <h3 class="resume-entry-title">
+                {{ partial "i18n_text.html" (dict "en" "Junior Software Developer" "ptbr" "Desenvolvedor de Software Junior" "fallback" "Junior Software Developer") }}
+              </h3>
+              <span class="resume-entry-company">Coreplan</span>
+            </div>
+            <div class="resume-entry-meta">
+              <span>04/2024 &ndash; 04/2025</span>
+              <span>Brazil</span>
+            </div>
+          </div>
+          <ul class="resume-entry-list">
+            <li>
+              {{ partial "i18n_text.html" (dict
+                "en" "Designed and implemented new features for the State Attorney General Offices of Mato Grosso, Distrito Federal, Espirito Santo, and Maranhao, improving operational efficiency across multiple government entities."
+                "ptbr" "Projetou e implementou novas features para as Procuradorias-Gerais dos Estados de Mato Grosso, Distrito Federal, Espirito Santo e Maranhao, melhorando a eficiencia operacional em multiplas entidades governamentais."
+                "fallback" "Designed and implemented new features for the State Attorney General Offices of Mato Grosso, Distrito Federal, Espirito Santo, and Maranhao, improving operational efficiency across multiple government entities."
+              ) }}
+            </li>
+            <li>
+              {{ partial "i18n_text.html" (dict
+                "en" "Enhanced core products using Ruby on Rails, JavaScript (jQuery), Bootstrap, and PostgreSQL — leading to improved system performance and user satisfaction."
+                "ptbr" "Aprimorou produtos core usando Ruby on Rails, JavaScript (jQuery), Bootstrap e PostgreSQL — resultando em melhor desempenho do sistema e satisfacao do usuario."
+                "fallback" "Enhanced core products using Ruby on Rails, JavaScript (jQuery), Bootstrap, and PostgreSQL — leading to improved system performance and user satisfaction."
+              ) }}
+            </li>
+            <li>
+              {{ partial "i18n_text.html" (dict
+                "en" "Integrated third-party APIs and delivered critical updates, including high-priority hotfixes and fast rollouts, reducing downtime and accelerating delivery for clients."
+                "ptbr" "Integrou APIs de terceiros e entregou atualizacoes criticas, incluindo hotfixes de alta prioridade e rollouts rapidos, reduzindo downtime e acelerando entregas para clientes."
+                "fallback" "Integrated third-party APIs and delivered critical updates, including high-priority hotfixes and fast rollouts, reducing downtime and accelerating delivery for clients."
+              ) }}
+            </li>
+            <li>
+              {{ partial "i18n_text.html" (dict
+                "en" "Monitored, maintained, and debugged applications in production environments, ensuring stability and seamless functionality for thousands of end-users."
+                "ptbr" "Monitorou, manteve e debugou aplicacoes em ambientes de producao, garantindo estabilidade e funcionalidade sem interrupcoes para milhares de usuarios finais."
+                "fallback" "Monitored, maintained, and debugged applications in production environments, ensuring stability and seamless functionality for thousands of end-users."
+              ) }}
+            </li>
+            <li>
+              {{ partial "i18n_text.html" (dict
+                "en" "Led front-end development on strategic side projects such as the Conciliation Portal, working within a microservices architecture and also contributing to back-end services using Ruby on Rails. Delivered responsive and accessible web applications with React.js and Next.js."
+                "ptbr" "Liderou o desenvolvimento front-end em projetos estrategicos como o Portal de Conciliacao, trabalhando dentro de uma arquitetura de microsservicos e tambem contribuindo para servicos back-end usando Ruby on Rails. Entregou aplicacoes web responsivas e acessiveis com React.js e Next.js."
+                "fallback" "Led front-end development on strategic side projects such as the Conciliation Portal, working within a microservices architecture and also contributing to back-end services using Ruby on Rails. Delivered responsive and accessible web applications with React.js and Next.js."
+              ) }}
+            </li>
+            <li>
+              {{ partial "i18n_text.html" (dict
+                "en" "Experience working with automated tests and maintaining testable, well-structured codebases."
+                "ptbr" "Experiencia trabalhando com testes automatizados e mantendo codebases testaveis e bem estruturadas."
+                "fallback" "Experience working with automated tests and maintaining testable, well-structured codebases."
+              ) }}
+            </li>
+          </ul>
+        </div>
+
+        <!-- Intern -->
+        <div class="resume-entry">
+          <div class="resume-entry-header">
+            <div>
+              <h3 class="resume-entry-title">
+                {{ partial "i18n_text.html" (dict "en" "Intern Software Developer" "ptbr" "Estagiario de Desenvolvimento de Software" "fallback" "Intern Software Developer") }}
+              </h3>
+              <span class="resume-entry-company">Coreplan</span>
+            </div>
+            <div class="resume-entry-meta">
+              <span>12/2023 &ndash; 04/2024</span>
+              <span>Brazil</span>
+            </div>
+          </div>
+          <ul class="resume-entry-list">
+            <li>
+              {{ partial "i18n_text.html" (dict
+                "en" "Implemented new features and maintained code in CorePlan's SPA, focusing on performance optimization and bug resolution to enhance overall product stability."
+                "ptbr" "Implementou novas features e manteve codigo na SPA da CorePlan, focando em otimizacao de performance e resolucao de bugs para melhorar a estabilidade geral do produto."
+                "fallback" "Implemented new features and maintained code in CorePlan's SPA, focusing on performance optimization and bug resolution to enhance overall product stability."
+              ) }}
+            </li>
+            <li>
+              {{ partial "i18n_text.html" (dict
+                "en" "Collaborated with the dedicated team for PGE-MT, applying skills in Ruby, Ruby on Rails, PostgreSQL, and JavaScript to deliver functional improvements in a fast-paced, agile environment."
+                "ptbr" "Colaborou com a equipe dedicada da PGE-MT, aplicando habilidades em Ruby, Ruby on Rails, PostgreSQL e JavaScript para entregar melhorias funcionais em um ambiente agil e dinamico."
+                "fallback" "Collaborated with the dedicated team for PGE-MT, applying skills in Ruby, Ruby on Rails, PostgreSQL, and JavaScript to deliver functional improvements in a fast-paced, agile environment."
+              ) }}
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <div class="accent-rule"></div>
+
+      <!-- EDUCATION -->
+      <section class="resume-section">
+        <h2 class="resume-section-title">
+          {{ partial "i18n_text.html" (dict "en" "Education" "ptbr" "Formacao Academica" "fallback" "Education") }}
+        </h2>
+        <div class="resume-entry">
+          <div class="resume-entry-header">
+            <div>
+              <h3 class="resume-entry-title">
+                {{ partial "i18n_text.html" (dict
+                  "en" "B.S. in Systems Analysis and Development"
+                  "ptbr" "Bacharelado em Analise e Desenvolvimento de Sistemas"
+                  "fallback" "B.S. in Systems Analysis and Development"
+                ) }}
+              </h3>
+              <span class="resume-entry-company">
+                {{ partial "i18n_text.html" (dict "en" "University Estacio de Sa — Fortaleza, Brazil" "ptbr" "Universidade Estacio de Sa — Fortaleza, Brasil" "fallback" "University Estacio de Sa — Fortaleza, Brazil") }}
+              </span>
+            </div>
+            <div class="resume-entry-meta">
+              <span>
+                {{ partial "i18n_text.html" (dict "en" "Graduated: July 2025" "ptbr" "Conclusao: Julho 2025" "fallback" "Graduated: July 2025") }}
+              </span>
+              <span>GPA: 3.7 / 4.0</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="accent-rule"></div>
+
+      <!-- SKILLS -->
+      <section class="resume-section">
+        <h2 class="resume-section-title">
+          {{ partial "i18n_text.html" (dict "en" "Technical Skills" "ptbr" "Habilidades Tecnicas" "fallback" "Technical Skills") }}
+        </h2>
+        <div class="resume-skills-grid">
+          <div class="resume-skill-group">
+            <h3 class="resume-skill-label">Backend</h3>
+            <div class="skill-tags">
+              <span class="skill-tag">Ruby</span>
+              <span class="skill-tag">Ruby on Rails</span>
+              <span class="skill-tag">PostgreSQL</span>
+              <span class="skill-tag">SQL</span>
+              <span class="skill-tag">Sidekiq</span>
+              <span class="skill-tag">Node.js</span>
+              <span class="skill-tag">Background Job Processing</span>
+            </div>
+          </div>
+          <div class="resume-skill-group">
+            <h3 class="resume-skill-label">Frontend</h3>
+            <div class="skill-tags">
+              <span class="skill-tag">JavaScript</span>
+              <span class="skill-tag">React.js</span>
+              <span class="skill-tag">Next.js</span>
+              <span class="skill-tag">HTML5</span>
+              <span class="skill-tag">CSS</span>
+            </div>
+          </div>
+          <div class="resume-skill-group">
+            <h3 class="resume-skill-label">
+              {{ partial "i18n_text.html" (dict "en" "Tools & Practices" "ptbr" "Ferramentas & Praticas" "fallback" "Tools & Practices") }}
+            </h3>
+            <div class="skill-tags">
+              <span class="skill-tag">Git</span>
+              <span class="skill-tag">CI/CD</span>
+              <span class="skill-tag">AI API Integration</span>
+              <span class="skill-tag">Postman</span>
+              <span class="skill-tag">OOP / SOLID</span>
+            </div>
+          </div>
+          <div class="resume-skill-group">
+            <h3 class="resume-skill-label">
+              {{ partial "i18n_text.html" (dict "en" "Languages" "ptbr" "Idiomas" "fallback" "Languages") }}
+            </h3>
+            <div class="skill-tags">
+              <span class="skill-tag">
+                {{ partial "i18n_text.html" (dict "en" "Portuguese (Native)" "ptbr" "Portugues (Nativo)" "fallback" "Portuguese (Native)") }}
+              </span>
+              <span class="skill-tag">
+                {{ partial "i18n_text.html" (dict "en" "English (Fluent)" "ptbr" "Ingles (Fluente)" "fallback" "English (Fluent)") }}
+              </span>
+              <span class="skill-tag">
+                {{ partial "i18n_text.html" (dict "en" "Spanish (Basic)" "ptbr" "Espanhol (Basico)" "fallback" "Spanish (Basic)") }}
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="accent-rule"></div>
+
+      <!-- COURSES -->
+      <section class="resume-section">
+        <h2 class="resume-section-title">
+          {{ partial "i18n_text.html" (dict "en" "Courses & Training" "ptbr" "Cursos & Treinamentos" "fallback" "Courses & Training") }}
+        </h2>
+
+        <div class="resume-entry">
+          <div class="resume-entry-header">
+            <div>
+              <h3 class="resume-entry-title">Ruby on Rails 5.x</h3>
+              <span class="resume-entry-company">Udemy</span>
+            </div>
+            <div class="resume-entry-meta">
+              <span>07/2023 &ndash; 09/2023</span>
+            </div>
+          </div>
+          <p class="resume-entry-desc">
+            {{ partial "i18n_text.html" (dict
+              "en" "Comprehensive Ruby on Rails course focused on MVC design pattern and practical implementation for building scalable web applications, emphasizing best practices, code organization, and application architecture."
+              "ptbr" "Curso abrangente de Ruby on Rails focado no padrao de design MVC e implementacao pratica para construcao de aplicacoes web escalaveis, enfatizando boas praticas, organizacao de codigo e arquitetura de aplicacoes."
+              "fallback" "Comprehensive Ruby on Rails course focused on MVC design pattern and practical implementation for building scalable web applications, emphasizing best practices, code organization, and application architecture."
+            ) }}
+          </p>
+        </div>
+
+        <div class="resume-entry">
+          <div class="resume-entry-header">
+            <div>
+              <h3 class="resume-entry-title">
+                {{ partial "i18n_text.html" (dict "en" "Modern Web Development with Javascript" "ptbr" "Desenvolvimento Web Moderno com Javascript" "fallback" "Modern Web Development with Javascript") }}
+              </h3>
+              <span class="resume-entry-company">Udemy</span>
+            </div>
+            <div class="resume-entry-meta">
+              <span>01/2022 &ndash; 07/2022</span>
+            </div>
+          </div>
+          <p class="resume-entry-desc">
+            {{ partial "i18n_text.html" (dict
+              "en" "ES6+ JavaScript, HTML, CSS, React, relational and non-relational databases. Multiple hands-on projects building dynamic, responsive web applications."
+              "ptbr" "ES6+ JavaScript, HTML, CSS, React, bancos de dados relacionais e nao-relacionais. Multiplos projetos praticos construindo aplicacoes web dinamicas e responsivas."
+              "fallback" "ES6+ JavaScript, HTML, CSS, React, relational and non-relational databases. Multiple hands-on projects building dynamic, responsive web applications."
+            ) }}
+          </p>
+        </div>
+
+        <div class="resume-entry">
+          <div class="resume-entry-header">
+            <div>
+              <h3 class="resume-entry-title">
+                {{ partial "i18n_text.html" (dict "en" "Speed Training — Business Management" "ptbr" "Speed Training — Gestao Empresarial" "fallback" "Speed Training — Business Management") }}
+              </h3>
+              <span class="resume-entry-company">Speed Training, Fortaleza</span>
+            </div>
+            <div class="resume-entry-meta">
+              <span>01/2019 &ndash; 01/2021</span>
+            </div>
+          </div>
+          <p class="resume-entry-desc">
+            {{ partial "i18n_text.html" (dict
+              "en" "Five modules: Administrative Management, People Management with Leadership, Corporate Communication and Marketing, Entrepreneurship, and Business Simulation."
+              "ptbr" "Cinco modulos: Gestao Administrativa, Gestao de Pessoas com Lideranca, Comunicacao Corporativa e Marketing, Empreendedorismo e Simulacao Empresarial."
+              "fallback" "Five modules: Administrative Management, People Management with Leadership, Corporate Communication and Marketing, Entrepreneurship, and Business Simulation."
+            ) }}
+          </p>
+        </div>
+      </section>
+
+      <div class="accent-rule"></div>
+
+      <!-- ACCOMPLISHMENTS -->
+      <section class="resume-section">
+        <h2 class="resume-section-title">
+          {{ partial "i18n_text.html" (dict "en" "Accomplishments" "ptbr" "Conquistas" "fallback" "Accomplishments") }}
+        </h2>
+        <div class="resume-entry">
+          <div class="resume-entry-header">
+            <div>
+              <h3 class="resume-entry-title">Santander Tech Scholarship</h3>
+              <span class="resume-entry-company">Santander &amp; DIO — Fortaleza, Brazil</span>
+            </div>
+            <div class="resume-entry-meta">
+              <span>08/2023 &ndash; 10/2023</span>
+            </div>
+          </div>
+          <p class="resume-entry-desc">
+            {{ partial "i18n_text.html" (dict
+              "en" "Awarded and successfully completed a competitive scholarship program for an intensive Java + AngularJS Full-Stack Bootcamp. Emphasized hands-on experience in enterprise-level application development, covering both front-end and back-end technologies, best practices, and modern software engineering principles."
+              "ptbr" "Premiado e concluiu com sucesso um programa de bolsa competitivo para um Bootcamp intensivo Full-Stack Java + AngularJS. Enfatizou experiencia pratica em desenvolvimento de aplicacoes de nivel corporativo, cobrindo tecnologias front-end e back-end, boas praticas e principios modernos de engenharia de software."
+              "fallback" "Awarded and successfully completed a competitive scholarship program for an intensive Java + AngularJS Full-Stack Bootcamp. Emphasized hands-on experience in enterprise-level application development, covering both front-end and back-end technologies, best practices, and modern software engineering principles."
+            ) }}
+          </p>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <div class="accent-rule"></div>
+      <section class="resume-section resume-cta-section">
+        <p class="resume-cta-text">
+          {{ partial "i18n_text.html" (dict
+            "en" "Interested in working together? Let's talk."
+            "ptbr" "Interessado em trabalhar juntos? Vamos conversar."
+            "fallback" "Interested in working together? Let's talk."
+          ) }}
+        </p>
+        <a href="mailto:ycaro.oleg.job@gmail.com" class="hero-cta">
+          {{ partial "i18n_text.html" (dict "en" "Get in touch" "ptbr" "Entre em contato" "fallback" "Get in touch") }}
+        </a>
+      </section>
+
+    </div>
+
+  {{ partial "container_close.html" . }}
+{{ end }}
