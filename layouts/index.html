@@ -3,28 +3,33 @@
 
     <!-- HERO -->
     <section class="hero-landing">
-      <div class="hero-landing-content">
-        <h1 class="hero-name">Ycaro Pires</h1>
-        <p class="hero-title">Software Engineer</p>
-        <p class="hero-headline">
-          {{ partial "i18n_text.html" (dict
-            "en" "Solving real problems with code"
-            "ptbr" "Resolvendo problemas reais com codigo"
-            "fallback" "Solving real problems with code"
-          ) }}
-        </p>
-        <p class="hero-tagline">
-          {{ partial "i18n_text.html" (dict
-            "en" "3+ years delivering mission-critical systems for government and enterprise clients. From backend APIs and system integrations to frontend interfaces and AI-powered solutions I build whatever the project needs."
-            "ptbr" "3+ anos entregando sistemas de missao critica para clientes governamentais e corporativos. De APIs backend e integracoes de sistemas a interfaces frontend e solucoes com IA — eu construo o que o projeto precisar."
-            "fallback" "3+ years delivering mission-critical systems for government and enterprise clients. From backend APIs and system integrations to frontend interfaces and AI-powered solutions I build whatever the project needs."
-          ) }}
-        </p>
-        <div class="hero-actions">
-          {{ partial "social_links.html" . }}
-          <a href="mailto:ycaro.oleg.job@gmail.com" class="hero-cta">
-            {{ partial "i18n_text.html" (dict "en" "Get in touch" "ptbr" "Entre em contato" "fallback" "Get in touch") }}
-          </a>
+      <div class="hero-landing-inner">
+        <div class="hero-landing-content">
+          <h1 class="hero-name">Ycaro Pires</h1>
+          <p class="hero-title">Software Engineer</p>
+          <p class="hero-headline">
+            {{ partial "i18n_text.html" (dict
+              "en" "Solving real problems with code"
+              "ptbr" "Resolvendo problemas reais com codigo"
+              "fallback" "Solving real problems with code"
+            ) }}
+          </p>
+          <p class="hero-tagline">
+            {{ partial "i18n_text.html" (dict
+              "en" "3+ years delivering mission-critical systems for government and enterprise clients. From backend APIs and system integrations to frontend interfaces and AI-powered solutions I build whatever the project needs."
+              "ptbr" "3+ anos entregando sistemas de missao critica para clientes governamentais e corporativos. De APIs backend e integracoes de sistemas a interfaces frontend e solucoes com IA — eu construo o que o projeto precisar."
+              "fallback" "3+ years delivering mission-critical systems for government and enterprise clients. From backend APIs and system integrations to frontend interfaces and AI-powered solutions I build whatever the project needs."
+            ) }}
+          </p>
+          <div class="hero-actions">
+            {{ partial "social_links.html" . }}
+            <a href="mailto:ycaro.oleg.job@gmail.com" class="hero-cta">
+              {{ partial "i18n_text.html" (dict "en" "Get in touch" "ptbr" "Entre em contato" "fallback" "Get in touch") }}
+            </a>
+          </div>
+        </div>
+        <div class="hero-photo">
+          <img src="{{ "Myself.png" | relURL }}" alt="Ycaro Pires" />
         </div>
       </div>
     </section>
