@@ -746,6 +746,11 @@ select:focus-visible {
   text-decoration: none;
 }
 
+.hero-cta--outline {
+  background: var(--accent);
+  color: var(--bg-matte);
+}
+
 /* Hero layout (text + photo) */
 .hero-landing-inner {
   display: flex;
