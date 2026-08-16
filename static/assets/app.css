@@ -954,11 +954,35 @@ a.project-card:hover {
   border-style: dashed;
 }
 
+.project-card--featured {
+  border-color: rgba(245, 196, 0, 0.5);
+  background: rgba(245, 196, 0, 0.06);
+}
+
+a.project-card--featured:hover {
+  border-color: var(--accent);
+}
+
 .project-card-header {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  gap: 8px;
   margin-bottom: 10px;
+}
+
+.project-card-header .project-card-title {
+  margin-right: auto;
+}
+
+.project-card-badge {
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: #14140f;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
 }
 
 .project-card-title {
