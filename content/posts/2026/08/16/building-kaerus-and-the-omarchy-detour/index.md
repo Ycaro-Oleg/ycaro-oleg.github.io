@@ -18,7 +18,7 @@ Since the start of this year I've been heads down building Kaerus, my own thing 
 
 Kaerus is a debugging assessment platform. The pitch is simple to say and annoyingly hard to build: measure someone's real, unaided engineering skill through deterministic incident simulations and sandboxed graders. No LLM whispering the answer in your ear, no copy-pasting a stack trace into a chat window. Just you, a broken system, and a clock.
 
-I got the idea after years of doing exactly that kind of debugging in production for public-sector clients at Coreplan. You learn pretty fast that reading a stack trace and actually understanding a system under pressure are two very different skills, and almost nothing out there measures the second one honestly anymore.
+I got the idea after years of doing exactly that kind of debugging in production for public-sector clients. You learn pretty fast that reading a stack trace and actually understanding a system under pressure are two very different skills, and almost nothing out there measures the second one honestly anymore.
 
 ## The part nobody warns you about
 
@@ -34,10 +34,11 @@ I underestimated how much of building a product is just deciding, over and over,
 
 Somewhere in the middle of all that, I needed a break that wasn't just scrolling my phone, so I went down a rabbit hole into Omarchy, DHH's Arch/Hyprland-based Linux setup that's been getting a lot of attention lately.
 
-I started poking around the plugin ecosystem out of pure curiosity, and thought, why not build something small and dumb just to decompress. So I built a Tetris plugin for it in Python. Nothing fancy in theory: desktop integration, persistent high scores, theme-aware rendering so it doesn't look out of place next to your Omarchy theme, sound, and CLI support.
-I published it, went back to Kaerus, and honestly kind of forgot about it.
+I started poking around the plugin ecosystem out of pure curiosity, and thought, why not build something small just to decompress. So I built a Tetris plugin for it in Python. Nothing fancy in theory: desktop integration, persistent high scores, theme-aware rendering so it doesn't look out of place next to your Omarchy theme, sound, and CLI support.
 
-Then I checked back and it had climbed into the top 10 most-copied plugins in the whole Omarchy community. A random side quest I built to decompress from my actual startup ended up being one of the most visible things I've shipped this year.
+I published it and went back to Kaerus. Almost overnight, from one day to the next, it was already being downloaded a lot.
+
+It didn't take long to climb into the top 10 most-copied plugins in the whole Omarchy community. A side project I built to decompress from my actual startup ended up being one of the most visible things I've shipped this year.
 
 Repo's here if you want to see it: [github.com/Ycaro-Oleg/omarchy-my-tetris](https://github.com/Ycaro-Oleg/omarchy-my-tetris)
 
@@ -72,7 +73,7 @@ Desde o início deste ano estou de cabeça baixa construindo o Kaerus, dessa vez
 
 O Kaerus é uma plataforma de avaliação de debugging. O pitch é fácil de falar e irritantemente difícil de construir: medir a habilidade real de engenharia de alguém, sem ajuda externa, através de simulações determinísticas de incidentes e avaliadores (graders) rodando em sandbox. Sem LLM sussurrando a resposta no ouvido, sem colar um stack trace num chat. Só você, um sistema quebrado, e o relógio correndo.
 
-A ideia surgiu depois de anos fazendo exatamente esse tipo de debugging em produção para clientes do setor público na Coreplan. A gente aprende rápido que ler um stack trace e realmente entender um sistema sob pressão são duas habilidades bem diferentes, e quase nada por aí mede a segunda de forma honesta hoje em dia.
+A ideia surgiu depois de anos fazendo exatamente esse tipo de debugging em produção para clientes do setor público. A gente aprende rápido que ler um stack trace e realmente entender um sistema sob pressão são duas habilidades bem diferentes, e quase nada por aí mede a segunda de forma honesta hoje em dia.
 
 ## A parte que ninguém te avisa
 
@@ -86,12 +87,13 @@ Eu subestimei o quanto de construir um produto é só decidir, repetidamente, se
 
 ## O desvio: Omarchy
 
-No meio disso tudo, eu precisava de uma pausa que não fosse só ficar rolando o feed do celular, então entrei numa toca de coelho chamada Omarchy, a configuração de Linux baseada em Arch/Hyprland do DHH que tem ganhado bastante atenção ultimamente.
+No meio disso tudo, eu precisava de uma pausa que não fosse só ficar rolando o feed do celular, então entrei numa espiral chamada Omarchy, a configuração de Linux baseada em Arch/Hyprland do DHH que tem ganhado bastante atenção ultimamente.
 
-Comecei a mexer no ecossistema de plugins por pura curiosidade e pensei: por que não construir algo pequeno e bobo só pra descomprimir a cabeça. Aí construí um plugin de Tetris pra ele em Python. Nada muito complexo em teoria: integração com o desktop, pontuações persistentes, renderização adaptada ao tema pra não destoar do seu tema do Omarchy, áudio e suporte a CLI.
-Publiquei, voltei pro Kaerus e, sinceramente, quase esqueci do plugin.
+Comecei a mexer no ecossistema de plugins por pura curiosidade e pensei: por que não construir algo pequeno só pra descomprimir a cabeça. Aí construí um plugin de Tetris pra ele em Python. Nada muito complexo em teoria: integração com o desktop, pontuações persistentes, renderização adaptada ao tema pra não destoar do seu tema do Omarchy, áudio e suporte a CLI.
 
-Aí voltei a checar e ele tinha subido pro top 10 dos plugins mais copiados de toda a comunidade do Omarchy. Uma side quest aleatória que eu construí só pra descomprimir da minha startup de verdade acabou sendo uma das coisas mais visíveis que lancei esse ano.
+Publiquei e voltei pro Kaerus. Quase da noite pro dia, de um dia pro outro, ele já estava sendo bastante baixado.
+
+Não demorou pra subir pro top 10 dos plugins mais copiados de toda a comunidade do Omarchy. Um projeto paralelo que construí só pra descomprimir da minha startup de verdade acabou sendo uma das coisas mais visíveis que lancei esse ano.
 
 O repositório está aqui, se quiser dar uma olhada: [github.com/Ycaro-Oleg/omarchy-my-tetris](https://github.com/Ycaro-Oleg/omarchy-my-tetris)
 
