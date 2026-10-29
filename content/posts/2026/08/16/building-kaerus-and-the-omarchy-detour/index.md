@@ -4,8 +4,8 @@ title_en: "Building Kaerus, and the detour that became a top 10 Omarchy plugin"
 title_ptbr: "Construindo o Kaerus, e o desvio que virou um plugin top 10 do Omarchy"
 date: 2026-08-16T13:40:00-03:00
 tags: ["Startup", "Open Source", "Kaerus", "Omarchy"]
-description_en: "Some thoughts on building Kaerus from scratch, the accidental detour into Omarchy that turned into a top 10 most-copied community plugin, and the actual struggle of shipping a new product alone."
-description_ptbr: "Algumas ideias sobre construir o Kaerus do zero, o desvio acidental pro Omarchy que virou um plugin entre os 10 mais copiados da comunidade, e a dificuldade real de lançar um produto novo sozinho."
+description_en: "Some thoughts on building Kaerus from scratch, the accidental detour into Omarchy that turned into one of the 10 most-downloaded plugins at the Omarchy Quattro launch, and the actual struggle of shipping a new product alone."
+description_ptbr: "Algumas ideias sobre construir o Kaerus do zero, o desvio acidental pro Omarchy que virou um dos 10 plugins mais baixados no lançamento do Omarchy Quattro, e a dificuldade real de lançar um produto novo sozinho."
 ---
 
 {{< langswitch default="en" >}}
@@ -38,7 +38,7 @@ I started poking around the plugin ecosystem out of pure curiosity, and thought,
 
 I published it and went back to Kaerus. Almost overnight, from one day to the next, it was already being downloaded a lot.
 
-It didn't take long to climb into the top 10 most-copied plugins in the whole Omarchy community. A side project I built to decompress from my actual startup ended up being one of the most visible things I've shipped this year.
+At the Omarchy Quattro launch, it became one of the 10 most-downloaded plugins and was widely praised by the community. A side project I built to decompress from my actual startup ended up being one of the most visible things I've shipped this year.
 
 Repo's here if you want to see it: [github.com/Ycaro-Oleg/omarchy-my-tetris](https://github.com/Ycaro-Oleg/omarchy-my-tetris)
 
@@ -93,7 +93,7 @@ Comecei a mexer no ecossistema de plugins por pura curiosidade e pensei: por que
 
 Publiquei e voltei pro Kaerus. Quase da noite pro dia, de um dia pro outro, ele já estava sendo bastante baixado.
 
-Não demorou pra subir pro top 10 dos plugins mais copiados de toda a comunidade do Omarchy. Um projeto paralelo que construí só pra descomprimir da minha startup de verdade acabou sendo uma das coisas mais visíveis que lancei esse ano.
+No lançamento do Omarchy Quattro, ficou entre os 10 plugins mais baixados e foi amplamente elogiado pela comunidade. Um projeto paralelo que construí só pra descomprimir da minha startup de verdade acabou sendo uma das coisas mais visíveis que lancei esse ano.
 
 O repositório está aqui, se quiser dar uma olhada: [github.com/Ycaro-Oleg/omarchy-my-tetris](https://github.com/Ycaro-Oleg/omarchy-my-tetris)
 

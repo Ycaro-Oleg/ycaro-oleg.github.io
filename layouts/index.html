@@ -9,21 +9,21 @@
     </div>
     {{ partial "larper_showcase.html" . }}
     <div class="secondary-projects">
-      <article class="tetris-project" data-reveal="picture" data-project-kind="open-source">
+      <a class="tetris-project" data-reveal="picture" data-project-kind="open-source" href="https://github.com/Ycaro-Oleg/omarchy-my-tetris">
         <div class="tetris-art" aria-hidden="true">
           <div class="tetris-pieces"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
           <span>omarchy<br>my tetris</span>
         </div>
         <div class="project-description">
-          <h3><a href="https://github.com/Ycaro-Oleg/omarchy-my-tetris" target="_blank" rel="noopener">Omarchy Tetris</a></h3>
-          <p>{{ partial "t.html" (dict "en" "A break from building a startup became a Tetris plugin for Omarchy. Theme-aware rendering, persistent scores, sound and a CLI." "pt" "Uma pausa na startup virou um plugin de Tetris para o Omarchy. Temas integrados, pontuações persistentes, áudio e CLI.") }}</p>
+          <h3>Omarchy Tetris</h3>
+          <p>{{ partial "t.html" (dict "en" "One of the 10 most-downloaded plugins at the Omarchy Quattro launch, widely praised by the community. It started as a break from building my startup." "pt" "Um dos 10 plugins mais baixados no lançamento do Omarchy Quattro, amplamente elogiado pela comunidade. Começou como uma pausa na construção da minha startup.") }}</p>
           <span class="project-tech">Python · Linux · Open source</span>
         </div>
-      </article>
+      </a>
       <div class="project-index" data-project-kind="web">
-        <article data-reveal="line"><h3><a href="https://github.com/Ycaro-Oleg/Verdikt" target="_blank" rel="noopener">Verdikt</a></h3><p>{{ partial "t.html" (dict "en" "A product URL goes in. An AI purchase verdict comes out." "pt" "Entra o link do produto. Sai um veredito de compra com IA.") }}</p><span class="project-tech">Rails 8 · Sidekiq · Claude API</span></article>
-        <article data-reveal="line"><h3><a href="https://github.com/Ycaro-Oleg/Rubric" target="_blank" rel="noopener">Rubric</a></h3><p>{{ partial "t.html" (dict "en" "Find your next book. And people who read like you." "pt" "Encontre sua próxima leitura. E pessoas que leem como você.") }}</p><span class="project-tech">React Native · Expo · Rails API</span></article>
-        <article data-reveal="line"><h3><a href="https://github.com/Ycaro-Oleg/NoMore" target="_blank" rel="noopener">No More</a></h3><p>{{ partial "t.html" (dict "en" "Commitments, Pomodoro sessions and proof that the work got done." "pt" "Compromissos, sessões de Pomodoro e prova de trabalho feito.") }}</p><span class="project-tech">Ruby on Rails · PostgreSQL</span></article>
+        <a class="project-card-link" data-reveal="line" href="https://github.com/Ycaro-Oleg/Verdikt"><h3>Verdikt</h3><p>{{ partial "t.html" (dict "en" "A product URL goes in. An AI purchase verdict comes out." "pt" "Entra o link do produto. Sai um veredito de compra com IA.") }}</p><span class="project-tech">Rails 8 · Sidekiq · Claude API</span></a>
+        <a class="project-card-link" data-reveal="line" href="https://github.com/Ycaro-Oleg/Rubric"><h3>Rubric</h3><p>{{ partial "t.html" (dict "en" "Find your next book. And people who read like you." "pt" "Encontre sua próxima leitura. E pessoas que leem como você.") }}</p><span class="project-tech">React Native · Expo · Rails API</span></a>
+        <a class="project-card-link" data-reveal="line" href="https://github.com/Ycaro-Oleg/NoMore"><h3>No More</h3><p>{{ partial "t.html" (dict "en" "Commitments, Pomodoro sessions and proof that the work got done." "pt" "Compromissos, sessões de Pomodoro e prova de trabalho feito.") }}</p><span class="project-tech">Ruby on Rails · PostgreSQL</span></a>
       </div>
     </div>
   </section>

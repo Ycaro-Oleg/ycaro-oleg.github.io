@@ -19,7 +19,7 @@ So, another chapter.
 
 Apparently I can't even go to a resort without coming back with a project to build lol.
 
-A friend and I were at GolfVille, and in a single day of brainstorming we came up with Larper. The name, what the web app would actually do, how someone would use it. We kept bouncing ideas back and forth, cutting some, changing others, until there was something we could build.
+A friend and I were at GolfVille (a resort here in Fortaleza), and in a single day of brainstorming we came up with Larper. The name, what the web app would actually do, how someone would use it. We kept bouncing ideas back and forth, cutting some, changing others, until there was something we could build.
 
 And we built the POC. That same day.
 
@@ -27,7 +27,7 @@ I'm being specific about the POC part because having a proof of concept and havi
 
 ## What we were trying to solve
 
-You do something worth sharing. Ship a feature, solve an annoying problem, learn something the hard way. Then you open LinkedIn or X, stare at the empty box and think: how the hell do I turn this into a post?
+You do something worth sharing. Ship a feature, solve an annoying problem, learn something the hard way. Then you open LinkedIn or X, stare at the empty box and think: how do I even start turning this into a post?
 
 And even if you get one written, each platform speaks a different language. What works on LinkedIn doesn't necessarily work on Reddit. Copying the same paragraph everywhere feels exactly like copying the same paragraph everywhere.
 
@@ -71,15 +71,15 @@ Buying the domain was the easy part.
 
 ## Learning infrastructure because I had to
 
-The next home ended up being Hetzner, with Coolify.
+The next home ended up being Hetzner.
 
 And that meant basically learning how to put the infrastructure together from scratch. Not just choosing a provider and hoping the deploy button would take care of the rest.
 
-Server, SSH, firewall, Docker, database, DNS, HTTPS. Understanding where each piece lives and how the request actually gets from the domain to the app.
+Getting it back online meant understanding what we were taking responsibility for: access, deployment, keeping things running, and what to do when something goes wrong.
 
 I'd worked on systems in production before, but putting the pieces together for our own product, under that pressure, was its own learning experience.
 
-The app now runs with Next.js and PostgreSQL on that setup. Nothing about it needs to sound glamorous. What mattered was understanding it well enough to get Larper back up and keep working.
+We got Larper back online. What mattered was understanding our new home well enough to keep moving and stop treating infrastructure as something that would somehow take care of itself.
 
 There's a big difference between knowing a service exists and being the person who has to make it work when the original plan falls apart.
 
@@ -123,7 +123,7 @@ E lá vamos nós, mais um capítulo.
 
 Aparentemente eu não consigo nem ir pra um resort sem voltar com um projeto pra construir kkk.
 
-Eu e um amigo estávamos no GolfVille e, em um único dia de brainstorming, bolamos o Larper. O nome, o que o web app ia fazer de verdade, como alguém usaria aquilo. Fomos trocando ideia, cortando algumas coisas, mudando outras, até ter algo que dava pra construir.
+Eu e um amigo estávamos no GolfVille (um resort aqui em Fortaleza) e, em um único dia de brainstorming, bolamos o Larper. O nome, o que o web app ia fazer de verdade, como alguém usaria aquilo. Fomos trocando ideia, cortando algumas coisas, mudando outras, até ter algo que dava pra construir.
 
 E fizemos a POC. Naquele mesmo dia.
 
@@ -131,7 +131,7 @@ Estou sendo específico na parte da POC porque ter uma prova de conceito e ter u
 
 ## O que a gente queria resolver
 
-Você faz algo que vale a pena compartilhar. Entrega uma feature, resolve um problema chato, aprende alguma coisa na marra. Aí abre o LinkedIn ou o X, olha pra caixa de texto vazia e pensa: como caralhos eu transformo isso num post?
+Você faz algo que vale a pena compartilhar. Entrega uma feature, resolve um problema chato, aprende alguma coisa na marra. Aí abre o LinkedIn ou o X, olha pra caixa de texto vazia e pensa: por onde eu começo pra transformar isso num post?
 
 E mesmo que consiga escrever um, cada rede tem uma linguagem diferente. O que funciona no LinkedIn não necessariamente funciona no Reddit. Copiar o mesmo parágrafo pra todo lugar fica com exatamente essa cara: o mesmo parágrafo copiado pra todo lugar.
 
@@ -175,15 +175,15 @@ Comprar o domínio foi a parte fácil.
 
 ## Aprendendo infraestrutura porque precisava
 
-A próxima casa acabou sendo a Hetzner, com Coolify.
+A próxima casa acabou sendo a Hetzner.
 
 E isso significou basicamente aprender a montar a infraestrutura do zero. Escolher um provedor passou a ser só o começo do trabalho.
 
-Servidor, SSH, firewall, Docker, banco de dados, DNS, HTTPS. Entender onde cada peça fica e como a requisição sai do domínio e chega no app de verdade.
+Colocar o app de volta no ar significou entender as responsabilidades que estávamos assumindo: acessos, deploy, manter tudo funcionando e o que fazer quando algo dá errado.
 
 Eu já trabalhava com sistemas em produção, mas juntar essas peças pro nosso próprio produto, com aquela pressão, foi um aprendizado à parte.
 
-Hoje o app roda com Next.js e PostgreSQL nessa estrutura. Não precisa soar glamouroso. O que importava era entender o suficiente pra colocar o Larper de volta no ar e continuar trabalhando.
+Conseguimos colocar o Larper de volta no ar. O que importava era entender essa nova casa o suficiente pra continuar e parar de tratar infraestrutura como algo que ia se resolver sozinho.
 
 Tem uma diferença enorme entre saber que um serviço existe e ser a pessoa que precisa fazer aquilo funcionar quando o plano original vai pro espaço.
 

@@ -1,5 +1,7 @@
 <div class="langswitch" data-default="{{ (.Get "default") | default "en" }}" data-js-only>
   <span>{{ partial "t.html" (dict "en" "Read in" "pt" "Ler em") }}</span>
-  <button type="button" data-global-lang="en" aria-pressed="true">English</button>
-  <button type="button" data-global-lang="pt-br" aria-pressed="false">Português</button>
+  <div class="language-control" aria-label="Language / Idioma">
+    <button type="button" data-global-lang="en" aria-pressed="true" aria-label="English (United States)">{{ partial "country_flag.html" "us" }}<span>EN</span></button>
+    <button type="button" data-global-lang="pt-br" aria-pressed="false" aria-label="Português (Brasil)">{{ partial "country_flag.html" "br" }}<span>PT</span></button>
+  </div>
 </div>

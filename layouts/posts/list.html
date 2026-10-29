@@ -8,6 +8,6 @@
   </div>
   <ul class="post-list archive-posts">{{ range .Pages.ByDate.Reverse }}{{ partial "post_row.html" . }}{{ end }}</ul>
   <p class="empty-state" id="search-empty" hidden>{{ partial "t.html" (dict "en" "No posts found. Try another word." "pt" "Nenhum post encontrado. Tente outra palavra.") }}</p>
-  <div class="archive-footer"><a class="text-link" href="{{ "/tags/" | relURL }}">{{ partial "t.html" (dict "en" "Browse by topic" "pt" "Explorar por assunto") }}</a><a class="text-link" href="{{ "/index.xml" | relURL }}">RSS</a></div>
+  <div class="archive-footer"><a class="text-link" href="{{ "/tags/" | relURL }}">{{ partial "t.html" (dict "en" "Browse by topic" "pt" "Explorar por assunto") }}</a></div>
 </div>
 {{ end }}

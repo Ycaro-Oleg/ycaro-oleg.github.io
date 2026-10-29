@@ -36,3 +36,13 @@ Validation covers production Hugo 0.145.0 output, JavaScript syntax, existing ro
 Visual critique: the original hierarchy and fake-demo concerns are addressed with modest heading sizes and source material. The remaining limitation is that product captures show the public experience; future authenticated editor captures can be dropped into the same viewer. No customer statistics, usage claims or endorsements were added.
 
 Intentional source-lint exceptions: shadows on the two suspended hero image layers and the real native image dialog. These are recorded inline, rather than removed from the composition. They distinguish floating layers from the page surface; ordinary cards have no shadows.
+
+## Content and light-theme refinement
+
+Founder wording replaces co-founder in both languages. Larper's implementation details are removed from its project summary, résumé, public README and origin post; the post keeps the product journey and infrastructure lessons. The GolfVille reference includes the Fortaleza context and the phrasing is softened.
+
+Omarchy Tetris now explicitly describes its top-ten downloads at the Omarchy Quattro launch and the community praise supplied by the owner. All public project cards are native GitHub links across their whole area. The private Larper project links to its public product.
+
+The résumé is a secondary hero action. RSS remains available for existing subscribers and autodiscovery, while the visible footer/archive links are removed. Language controls use compact rounded buttons and local inline Brazil/US flags.
+
+Light colors: #f6f7f9 ground, #edf0f3 surfaces, #232d38 graphite text, #556371 secondary text, #e7bd45 muted gold and #176b46 Larper actions. Product/campaign images retain their original brand colors.
