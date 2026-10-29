@@ -15,3 +15,42 @@ Built with [Hugo](https://gohugo.io/) and published with GitHub Pages.
 ```bash
 hugo server
 ```
+
+## Writing a post
+
+Posts are still plain Markdown page bundles. Create:
+
+    content/posts/YYYY/MM/DD/your-slug/index.md
+
+Use this front matter:
+
+    ---
+    title: "English title"
+    title_en: "English title"
+    title_ptbr: "Título em português"
+    date: 2026-10-28T12:00:00-03:00
+    slug: "your-slug"
+    tags: ["Startup"]
+    description_en: "English summary."
+    description_ptbr: "Resumo em português."
+    ---
+
+Then write both versions using the existing shortcodes:
+
+    {{< langswitch default="en" >}}
+    {{< langblock lang="en" >}}
+    Your English Markdown.
+    {{< /langblock >}}
+    {{< langblock lang="pt-br" >}}
+    Seu Markdown em português.
+    {{< /langblock >}}
+
+An optional short_title_en / short_title_ptbr gives the homepage's latest-post link a shorter label. The archive, search, topics, reading time and article navigation update automatically. Search includes both languages and the post body. No database, CMS, API key or JavaScript dependency installation is needed.
+
+Run hugo --minify to verify the production build. Pushing to master or main publishes through the existing GitHub Pages workflow. Keep dates at or before the intended publication time; Hugo excludes future posts by default.
+
+## Interface
+
+Self-hosted Cabinet Grotesk, the original dark/yellow brand, a Larper tone example, persistent EN/PT and light/dark choices, mobile navigation, full-text archive search, article contents and reading progress. Animation respects prefers-reduced-motion. Content, project links and both article languages remain readable without JavaScript.
+
+Design decisions and validation: [DESIGN.md](DESIGN.md).

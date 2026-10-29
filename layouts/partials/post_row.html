@@ -1,0 +1,8 @@
+<li class="post-row" data-reveal data-search="{{ printf "%s %s %s %s %s %s" .Title (.Params.title_ptbr | default "") (.Params.description_en | default "") (.Params.description_ptbr | default "") (delimit (.Params.tags | default slice) " ") .Plain | lower }}">
+  <div class="post-row-meta"><time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "02.01.2006" }}</time>{{ with .Params.tags }}<span>{{ index . 0 }}</span>{{ end }}</div>
+  <div class="post-row-body">
+    <h3 class="post-row-title"><a href="{{ .RelPermalink }}">{{ partial "t.html" (dict "en" (.Params.title_en | default .Title) "pt" (.Params.title_ptbr | default .Title)) }}</a></h3>
+    <p class="post-row-excerpt">{{ partial "t.html" (dict "en" (.Params.description_en | default .Params.description) "pt" (.Params.description_ptbr | default .Params.description)) }}</p>
+  </div>
+  <span class="post-row-arrow" aria-hidden="true">↗</span>
+</li>

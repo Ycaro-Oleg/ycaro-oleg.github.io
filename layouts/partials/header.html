@@ -1,29 +1,19 @@
 <header class="site-header">
-  {{ partial "container_open.html" . }}
-    <div class="site-header-inner">
-      <div class="flex items-center gap-3">
-        <a href="{{ "/" | relURL }}">
-          <img
-            class="wordmark-logo"
-            src="{{ "ycr_mind_transparent.png" | relURL }}"
-            alt="{{ .Site.Title }}"
-            decoding="async"
-          />
-          <span class="sr-only">{{ .Site.Title }}</span>
-        </a>
+  <div class="container site-header-inner">
+    <a class="wordmark" href="{{ "/" | relURL }}" aria-label="YCR Mind home">YCR<span>Mind</span></a>
+    <nav class="nav" id="site-nav" aria-label="Main navigation / Navegação principal">
+      <a class="nav-link" href="{{ "/" | relURL }}#projects">{{ partial "t.html" (dict "en" "Projects" "pt" "Projetos") }}</a>
+      <a class="nav-link" href="{{ "/posts/" | relURL }}" {{ if eq .Section "posts" }}aria-current="page"{{ end }}>Blog</a>
+      <a class="nav-link" href="{{ "/" | relURL }}#about">{{ partial "t.html" (dict "en" "About" "pt" "Sobre") }}</a>
+      <a class="nav-link" href="{{ "/resume/" | relURL }}" {{ if eq .Section "resume" }}aria-current="page"{{ end }}>{{ partial "t.html" (dict "en" "Resume" "pt" "Currículo") }}</a>
+    </nav>
+    <div class="header-tools" data-js-only>
+      <div class="language-control" aria-label="Language / Idioma">
+        <button type="button" data-global-lang="en" aria-pressed="true">EN</button>
+        <button type="button" data-global-lang="pt-br" aria-pressed="false">PT</button>
       </div>
-
-      <nav class="nav" aria-label="Primary">
-        <a class="nav-link" href="{{ "/" | relURL }}">Home</a>
-        <a class="nav-link" href="{{ "/" | relURL }}#about">{{ partial "i18n_text.html" (dict "en" "About" "ptbr" "Sobre" "fallback" "About") }}</a>
-        <a class="nav-link" href="{{ "/" | relURL }}#projects">{{ partial "i18n_text.html" (dict "en" "Projects" "ptbr" "Projetos" "fallback" "Projects") }}</a>
-        <a class="nav-link" href="{{ "/resume/" | relURL }}">{{ partial "i18n_text.html" (dict "en" "Resume" "ptbr" "Curriculo" "fallback" "Resume") }}</a>
-        <a class="nav-link" href="{{ "/posts/" | relURL }}">Blog</a>
-        <a class="nav-link" href="{{ "/tags/" | relURL }}">Tags</a>
-        <span class="nav-sep" aria-hidden="true">&middot;</span>
-        <button type="button" class="nav-link nav-lang-btn" data-global-lang="en" aria-pressed="false">EN</button>
-        <button type="button" class="nav-link nav-lang-btn" data-global-lang="pt-br" aria-pressed="false">PT-BR</button>
-      </nav>
+      <button class="theme-toggle" type="button" aria-label="Change color theme / Mudar tema de cores" aria-pressed="false"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 4a8 8 0 0 1 0 16Z" fill="currentColor"/></svg></button>
+      <button class="menu-toggle" type="button" aria-controls="site-nav" aria-expanded="false">Menu</button>
     </div>
-  {{ partial "container_close.html" . }}
+  </div>
 </header>

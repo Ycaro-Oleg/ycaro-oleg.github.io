@@ -1,25 +1,7 @@
 {{ define "main" }}
-  {{ partial "container_open.html" . }}
-    <div class="py-6 md:py-8">
-      <section class="hero">
-        <h1>Tag: {{ .Title }}</h1>
-        <p>Posts tagged with {{ .Title }}.</p>
-        <div class="accent-rule"></div>
-      </section>
-
-      <ul class="post-list">
-        {{ range (sort .Pages "Date" "desc") }}
-          <li class="post-row">
-            <div class="post-row-meta">
-              <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
-              <span aria-hidden="true">·</span>
-            </div>
-            <h2 class="post-row-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
-            {{ with .Params.description }}<p class="post-row-excerpt">{{ . }}</p>{{ end }}
-          </li>
-        {{ end }}
-      </ul>
-    </div>
-  {{ partial "container_close.html" . }}
+<div class="container archive-page">
+  <a class="text-link" href="{{ "/tags/" | relURL }}">{{ partial "t.html" (dict "en" "All topics" "pt" "Todos os assuntos") }}</a>
+  <header class="topic-header"><h1>{{ .Title }}</h1></header>
+  <ul class="post-list">{{ range .Pages.ByDate.Reverse }}{{ partial "post_row.html" . }}{{ end }}</ul>
+</div>
 {{ end }}
-

@@ -1,21 +1,9 @@
 {{ define "main" }}
-  {{ partial "container_open.html" . }}
-    <div class="py-6 md:py-8">
-      <section class="hero">
-        <h1>Tags</h1>
-        <p>Topics across the archive.</p>
-        <div class="accent-rule"></div>
-      </section>
-
-      <div class="tag-row" aria-label="All tags">
-        {{ range .Data.Terms.Alphabetical }}
-          <a class="tag-chip" href="{{ .Page.RelPermalink }}">
-            <span>{{ .Page.Title }}</span>
-            <span class="tag-chip-count">{{ .Count }}</span>
-          </a>
-        {{ end }}
-      </div>
-    </div>
-  {{ partial "container_close.html" . }}
+<div class="container archive-page">
+  <header class="archive-header"><h1>{{ partial "t.html" (dict "en" "Topics" "pt" "Assuntos") }}</h1><p>{{ partial "t.html" (dict "en" "Follow an idea through the archive." "pt" "Acompanhe uma ideia pelos textos do blog.") }}</p></header>
+  <div class="topic-list">
+    {{ range .Data.Terms.Alphabetical }}<a class="topic-link" href="{{ .Page.RelPermalink }}"><span>{{ .Page.Title }}</span><span>{{ .Count }}</span></a>{{ end }}
+  </div>
+  <a class="text-link" href="{{ "/posts/" | relURL }}">{{ partial "t.html" (dict "en" "All posts" "pt" "Todos os posts") }}</a>
+</div>
 {{ end }}
-

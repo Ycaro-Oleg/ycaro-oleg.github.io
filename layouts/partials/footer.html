@@ -1,8 +1,7 @@
-<footer class="site-footer">
-  {{ partial "container_open.html" . }}
-    <div class="footer-inner">
-      <div>&copy; {{ now.Year }} {{ .Site.Title }}</div>
-    </div>
-  {{ partial "container_close.html" . }}
+<footer class="site-footer" id="contact">
+  <div class="container">
+    <div class="footer-contact"><h2>{{ partial "t.html" (dict "en" "Have something in mind?" "pt" "Tem algo em mente?") }}</h2><a class="button" href="mailto:ycaro.oleg.job@gmail.com">{{ partial "t.html" (dict "en" "Let's talk" "pt" "Vamos conversar") }} <span aria-hidden="true">↗</span></a></div>
+    <div class="footer-links"><span>© {{ now.Year }} Ycaro Pires</span><a href="{{ .Site.Params.github }}" target="_blank" rel="noopener">GitHub</a><a href="{{ .Site.Params.linkedin }}" target="_blank" rel="noopener">LinkedIn</a><a href="{{ "/index.xml" | relURL }}">RSS</a><a href="#content">{{ partial "t.html" (dict "en" "Back to top" "pt" "Voltar ao topo") }}</a></div>
+    <div class="footer-monument" aria-hidden="true"><div>YCR Mind&nbsp; YCR Mind&nbsp;</div></div>
+  </div>
 </footer>
-

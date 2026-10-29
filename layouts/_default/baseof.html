@@ -1,25 +1,36 @@
 <!DOCTYPE html>
 <html lang="{{ .Site.Language.Lang }}">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="dark light">
     <link rel="icon" href="{{ "YCRMindLogo.svg" | relURL }}" type="image/svg+xml">
-    <title>
-      {{ if .IsHome }}
-        {{ .Site.Title }}
-      {{ else }}
-        {{ .Title }} · {{ .Site.Title }}
-      {{ end }}
-    </title>
-    <meta name="description" content="{{ .Params.description | default .Site.Params.description }}" />
-    <link rel="stylesheet" href="{{ "assets/app.css" | relURL }}" />
+    <title>{{ if .IsHome }}{{ .Site.Title }} · Ycaro Pires{{ else }}{{ .Title }} · {{ .Site.Title }}{{ end }}</title>
+    <meta name="description" content="{{ .Params.description_en | default .Params.description | default .Site.Params.description }}">
+    <link rel="canonical" href="{{ .Permalink }}">
+    <meta property="og:title" content="{{ .Title }} · {{ .Site.Title }}">
+    <meta property="og:description" content="{{ .Params.description_en | default .Params.description | default .Site.Params.description }}">
+    <meta property="og:url" content="{{ .Permalink }}">
+    <meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}">
+    <link rel="alternate" type="application/rss+xml" title="YCR Mind RSS" href="{{ "/index.xml" | absURL }}">
+    <script>
+      (() => {
+        document.documentElement.classList.add("js");
+        try {
+          const theme = localStorage.getItem("ycr.theme");
+          if (theme === "light" || theme === "dark") document.documentElement.dataset.theme = theme;
+          const lang = localStorage.getItem("ycr.lang");
+          if (lang === "pt-br" || lang === "en") document.documentElement.lang = lang;
+        } catch (_) {}
+      })();
+    </script>
+    <link rel="preload" href="{{ "assets/fonts/cabinet-grotesk.woff2" | relURL }}" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="{{ "assets/app.css" | relURL }}?v={{ readFile "static/assets/app.css" | sha256 | truncate 12 "" }}">
   </head>
-  <body class="page">
-    <a href="#content" class="sr-only">Skip to content</a>
+  <body class="page{{ if .IsHome }} is-home{{ end }}">
+    <a href="#content" class="skip-link">{{ partial "t.html" (dict "en" "Skip to content" "pt" "Pular para o conteúdo") }}</a>
     {{ partial "header.html" . }}
-    <main id="content" class="page-main">
-      {{ block "main" . }}{{ end }}
-    </main>
+    <main id="content" class="page-main">{{ block "main" . }}{{ end }}</main>
     {{ partial "footer.html" . }}
     {{ partial "lang_global.html" . }}
   </body>
