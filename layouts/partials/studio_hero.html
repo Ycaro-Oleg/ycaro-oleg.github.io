@@ -1,0 +1,16 @@
+<section class="studio-hero" aria-labelledby="studio-title">
+  <div class="studio-intro">
+    <h1 id="studio-title" class="studio-title">{{ partial "t.html" (dict "en" "Ideas in production." "pt" "Ideias em produção.") }}</h1>
+    <p class="studio-bio">{{ partial "t.html" (dict "en" "I'm Ycaro Pires. Software engineer, building products of my own and writing about what happens along the way." "pt" "Sou Ycaro Pires. Engenheiro de software, construindo meus produtos e escrevendo sobre o que acontece pelo caminho.") }}</p>
+    <div class="studio-actions"><a class="button" href="#projects">{{ partial "t.html" (dict "en" "Explore projects" "pt" "Explorar projetos") }} <span aria-hidden="true">↘</span></a><a class="text-link" href="{{ "/posts/" | relURL }}">{{ partial "t.html" (dict "en" "Read the blog" "pt" "Ler o blog") }}</a></div>
+    <p class="studio-focus">{{ partial "t.html" (dict "en" "Currently building" "pt" "Agora construindo") }} <a href="#projects">Larper</a><span aria-hidden="true">↗</span></p>
+  </div>
+  <div class="studio-desk" data-desk aria-label="Larper">
+    <a class="desk-screen" href="#projects"><div class="screen-bar"><span class="screen-dots" aria-hidden="true"><i></i><i></i><i></i></span><span>larpr.dev</span><span aria-hidden="true">↗</span></div><img src="{{ "media/larper/product-home.jpg" | relURL }}" alt="Larper website / Site do Larper" width="1200" height="800" fetchpriority="high"></a>
+    <a class="desk-art" href="#larper-gallery"><img src="{{ "media/larper/larry-poster.webp" | relURL }}" alt="Larry, Larper" width="960" height="1200"></a>
+    <a class="desk-author" href="#about"><img src="{{ "media/portrait.webp" | relURL }}" alt="Ycaro Pires" width="160" height="160"><span>{{ partial "t.html" (dict "en" "The person building it" "pt" "Quem está construindo") }}</span></a>
+  </div>
+</section>
+{{ range first 1 (where .Site.RegularPages "Section" "posts").ByDate.Reverse }}
+<a class="journal-link" href="{{ .RelPermalink }}"><span>{{ partial "t.html" (dict "en" "Latest on the blog" "pt" "A última do blog") }}</span><strong>{{ partial "t.html" (dict "en" (.Params.short_title_en | default .Title) "pt" (.Params.short_title_ptbr | default .Title)) }}</strong><time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "02.01.2006" }}</time><span aria-hidden="true">↗</span></a>
+{{ end }}

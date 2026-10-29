@@ -1,0 +1,44 @@
+<article class="case-study">
+  <div class="case-summary">
+    <div class="case-intro" data-reveal="line">
+      <div class="case-name"><img src="{{ "media/larper/larper-mark.webp" | relURL }}" alt="" width="64" height="48"><h3>Larper</h3></div>
+      <p class="case-lead">{{ partial "t.html" (dict "en" "You do the work. Larry tells the story." "pt" "Você faz o trabalho. O Larry conta a história.") }}</p>
+      <p>{{ partial "t.html" (dict "en" "A rough note becomes posts for LinkedIn, X, Threads and Reddit. From grounded to full larp, with editing, scheduling and your approval before publishing." "pt" "Uma anotação vira posts para LinkedIn, X, Threads e Reddit. Do pé no chão ao full larp, com edição, agendamento e a sua aprovação antes de publicar.") }}</p>
+      <div class="feature-links"><a class="button button-larper" href="https://larpr.dev/" target="_blank" rel="noopener">{{ partial "t.html" (dict "en" "Open Larper" "pt" "Abrir o Larper") }} <span aria-hidden="true">↗</span></a>{{ with .GetPage "/posts/2026/10/28/larper-from-golfville-to-production" }}<a class="text-link" href="{{ .RelPermalink }}">{{ partial "t.html" (dict "en" "Read the origin story" "pt" "Ler a história do projeto") }}</a>{{ end }}</div>
+    </div>
+    <dl class="case-details" data-reveal="line">
+      <div><dt>{{ partial "t.html" (dict "en" "My role" "pt" "Meu papel") }}</dt><dd>{{ partial "t.html" (dict "en" "Co-founder & software engineer" "pt" "Cofundador e engenheiro de software") }}</dd></div>
+      <div><dt>Stack</dt><dd>Next.js · TypeScript · PostgreSQL · AI SDK</dd></div>
+      <div><dt>{{ partial "t.html" (dict "en" "Infrastructure" "pt" "Infraestrutura") }}</dt><dd>Hetzner · Coolify</dd></div>
+    </dl>
+  </div>
+  <div class="case-media" id="larper-gallery">
+    <div class="product-viewer" data-reveal="picture">
+      <div class="viewer-tabs" role="tablist" aria-label="Larper" data-js-only>
+        <button type="button" role="tab" id="view-home" aria-selected="true" aria-controls="panel-home" data-product-tab="home">{{ partial "t.html" (dict "en" "The website" "pt" "O site") }}</button>
+        <button type="button" role="tab" id="view-networks" aria-selected="false" aria-controls="panel-networks" tabindex="-1" data-product-tab="networks">{{ partial "t.html" (dict "en" "Posts for each network" "pt" "Posts por rede") }}</button>
+      </div>
+      <figure class="product-panel" id="panel-home" role="tabpanel" aria-labelledby="view-home" tabindex="0">
+        <a class="product-capture" href="{{ "media/larper/product-home.jpg" | relURL }}" data-lightbox data-caption-en="Larper's public website" data-caption-pt="Site público do Larper"><img src="{{ "media/larper/product-home.jpg" | relURL }}" alt="Larper website / Site do Larper" width="1200" height="800" loading="lazy"><span class="capture-expand">{{ partial "t.html" (dict "en" "Enlarge capture" "pt" "Ampliar captura") }} <span aria-hidden="true">↗</span></span></a>
+        <figcaption>{{ partial "t.html" (dict "en" "The public Larper experience, captured from larpr.dev." "pt" "A experiência pública do Larper, capturada em larpr.dev.") }}</figcaption>
+      </figure>
+      <figure class="product-panel" id="panel-networks" role="tabpanel" aria-labelledby="view-networks" tabindex="0">
+        <a class="product-capture" href="{{ "media/larper/product-networks.jpg" | relURL }}" data-lightbox data-caption-en="Larper's intensity and network previews" data-caption-pt="Intensidade e prévias por rede no Larper"><img src="{{ "media/larper/product-networks.jpg" | relURL }}" alt="Larper: LinkedIn, X, Reddit" width="1200" height="950" loading="lazy"><span class="capture-expand">{{ partial "t.html" (dict "en" "Enlarge capture" "pt" "Ampliar captura") }} <span aria-hidden="true">↗</span></span></a>
+        <figcaption>{{ partial "t.html" (dict "en" "The same event, adapted to each network's language and format." "pt" "O mesmo acontecimento, adaptado à linguagem e ao formato de cada rede.") }}</figcaption>
+      </figure>
+    </div>
+    <figure class="campaign-film" data-reveal="picture">
+      <video id="larper-film" controls muted loop playsinline preload="none" poster="{{ "media/larper/larry-poster.webp" | relURL }}" aria-label="This is Larry"><source src="{{ "media/larper/larry-launch-web.mp4" | relURL }}" type="video/mp4"><a href="{{ "media/larper/larry-launch-web.mp4" | relURL }}">{{ partial "t.html" (dict "en" "Watch the launch video" "pt" "Assistir ao vídeo de lançamento") }}</a></video>
+      <figcaption>{{ partial "t.html" (dict "en" "This is Larry. From our launch campaign." "pt" "This is Larry. Da nossa campanha de lançamento.") }}</figcaption>
+    </figure>
+  </div>
+  <div class="campaign-gallery">
+    <div class="campaign-heading"><h4>{{ partial "t.html" (dict "en" "The identity taking shape" "pt" "A identidade ganhando forma") }}</h4><div class="gallery-controls" data-js-only><button type="button" data-gallery-step="-1" aria-label="Previous artwork / Arte anterior">←</button><button type="button" data-gallery-step="1" aria-label="Next artwork / Próxima arte">→</button></div></div>
+    <div class="campaign-track" tabindex="0" aria-label="Larper campaign / Campanha do Larper">
+      <a href="{{ "media/larper/you-did-the-work.webp" | relURL }}" data-lightbox data-caption-en="You did the work. Our Larper campaign." data-caption-pt="You did the work. Nossa campanha do Larper."><img src="{{ "media/larper/you-did-the-work.webp" | relURL }}" alt="You did the work. We'll do the bragging." width="1400" height="788" loading="lazy"></a>
+      <a href="{{ "media/larper/five-energies.webp" | relURL }}" data-lightbox data-caption-en="The same fact, five energies." data-caption-pt="O mesmo fato, cinco intensidades."><img src="{{ "media/larper/five-energies.webp" | relURL }}" alt="How hard are we larping? Grounded, Confident, Bold, Main character, Full larp." width="1600" height="900" loading="lazy"></a>
+      <a href="{{ "media/larper/division-of-labor.webp" | relURL }}" data-lightbox data-caption-en="You do the work. Larry tells everyone." data-caption-pt="Você faz o trabalho. O Larry conta para todo mundo."><img src="{{ "media/larper/division-of-labor.webp" | relURL }}" alt="Division of labor: you and Larry" width="1080" height="1350" loading="lazy"></a>
+    </div>
+  </div>
+</article>
+<div class="experiments-heading"><h3>{{ partial "t.html" (dict "en" "Other experiments" "pt" "Outros experimentos") }}</h3><div class="project-filters" aria-label="Projects / Projetos" data-js-only><button type="button" data-project-filter="all" aria-pressed="true">{{ partial "t.html" (dict "en" "All" "pt" "Todos") }}</button><button type="button" data-project-filter="open-source" aria-pressed="false">Open source</button><button type="button" data-project-filter="web" aria-pressed="false">Web apps</button></div></div>

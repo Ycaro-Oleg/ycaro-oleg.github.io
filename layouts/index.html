@@ -1,52 +1,15 @@
 {{ define "main" }}
 <div class="container">
-  <section class="mind-hero" aria-labelledby="mind-title">
-    <h1 id="mind-title" class="mind-title">YCR Mind</h1>
-    <div class="hero-bottom">
-      <div class="hero-intro">
-        <p class="hero-intro-text">{{ partial "t.html" (dict "en" "I'm Ycaro Pires. Software engineer, building my own things and writing through the process." "pt" "Sou Ycaro Pires. Engenheiro de software, construindo meus projetos e escrevendo sobre o caminho.") }}</p>
-        <a class="button" href="#projects">{{ partial "t.html" (dict "en" "Explore my projects" "pt" "Explorar projetos") }} <span aria-hidden="true">↘</span></a>
-      </div>
-      {{ range first 1 (where .Site.RegularPages "Section" "posts").ByDate.Reverse }}
-      <a class="hero-latest" href="{{ .RelPermalink }}">
-        <span>{{ partial "t.html" (dict "en" "The latest on the blog" "pt" "A última do blog") }}</span>
-        <strong>{{ partial "t.html" (dict "en" (.Params.short_title_en | default .Title) "pt" (.Params.short_title_ptbr | default .Title)) }}</strong>
-        <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "02.01.2006" }}</time>
-      </a>
-      {{ end }}
-    </div>
-  </section>
+  {{ partial "studio_hero.html" . }}
 
   <section class="work-section" id="projects" aria-labelledby="work-title">
     <div class="section-heading-row">
       <h2 id="work-title">{{ partial "t.html" (dict "en" "Things I'm building" "pt" "O que estou construindo") }}</h2>
       <a class="text-link" href="{{ .Site.Params.github }}" target="_blank" rel="noopener">GitHub</a>
     </div>
-    <div class="larper-feature">
-      <div class="larper-copy">
-        <h3>Larper</h3>
-        <p class="feature-lead">{{ partial "t.html" (dict "en" "You did the work. Tell the story." "pt" "Você fez acontecer. Conte a história.") }}</p>
-        <p>{{ partial "t.html" (dict "en" "Turn what you actually did into posts shaped for LinkedIn, X, Threads and Reddit. Choose the tone, edit, then schedule or publish." "pt" "Transforme o que você fez em posts no formato do LinkedIn, X, Threads e Reddit. Escolha o tom, edite e depois agende ou publique.") }}</p>
-        <p class="project-tech">Next.js · TypeScript · PostgreSQL · AI SDK · Hetzner</p>
-        <div class="feature-links">
-          <a class="button button-ink" href="https://larpr.dev/" target="_blank" rel="noopener">{{ partial "t.html" (dict "en" "Explore Larper" "pt" "Conhecer o Larper") }} <span aria-hidden="true">↗</span></a>
-          {{ with .GetPage "/posts/2026/10/28/larper-from-golfville-to-production" }}<a class="text-link" href="{{ .RelPermalink }}">{{ partial "t.html" (dict "en" "How it started" "pt" "Como tudo começou") }}</a>{{ end }}
-        </div>
-      </div>
-      <div class="tone-demo" data-ui>
-        <div class="demo-top"><span>{{ partial "t.html" (dict "en" "One story, different tones" "pt" "Uma história, vários tons") }}</span><span class="demo-mark" aria-hidden="true">L</span></div>
-        <p class="demo-source">{{ partial "t.html" (dict "en" "A day of brainstorming with a friend at GolfVille. A name, an idea, a working POC." "pt" "Um dia de brainstorming com um amigo no GolfVille. Um nome, uma ideia, uma POC funcionando.") }}</p>
-        <div class="tone-control" data-js-only>
-          <label for="larp-tone">{{ partial "t.html" (dict "en" "Story intensity" "pt" "Intensidade da história") }}</label>
-          <input id="larp-tone" type="range" min="1" max="3" value="1" step="1" aria-describedby="demo-note">
-          <div class="tone-labels" aria-hidden="true"><span>{{ partial "t.html" (dict "en" "Grounded" "pt" "Pé no chão") }}</span><span>Full larp</span></div>
-        </div>
-        <p class="demo-output" id="tone-output" aria-live="polite">{{ partial "t.html" (dict "en" "Spent a day at GolfVille brainstorming with a friend. We left with a name, a clear idea and a working POC for Larper. Now comes the part we're still learning: marketing." "pt" "Passei um dia no GolfVille trocando ideia com um amigo. Saímos com um nome, uma ideia definida e uma POC do Larper funcionando. Agora vem a parte que ainda estamos aprendendo: marketing.") }}</p>
-        <p class="demo-note" id="demo-note">{{ partial "t.html" (dict "en" "Illustrative examples. Try the full workflow in Larper." "pt" "Exemplos ilustrativos. Experimente o fluxo completo no Larper.") }}</p>
-      </div>
-    </div>
+    {{ partial "larper_showcase.html" . }}
     <div class="secondary-projects">
-      <article class="tetris-project" data-reveal>
+      <article class="tetris-project" data-reveal="picture" data-project-kind="open-source">
         <div class="tetris-art" aria-hidden="true">
           <div class="tetris-pieces"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
           <span>omarchy<br>my tetris</span>
@@ -57,10 +20,10 @@
           <span class="project-tech">Python · Linux · Open source</span>
         </div>
       </article>
-      <div class="project-index">
-        <article data-reveal><h3><a href="https://github.com/Ycaro-Oleg/Verdikt" target="_blank" rel="noopener">Verdikt</a></h3><p>{{ partial "t.html" (dict "en" "A product URL goes in. An AI purchase verdict comes out." "pt" "Entra o link do produto. Sai um veredito de compra com IA.") }}</p><span class="project-tech">Rails 8 · Sidekiq · Claude API</span></article>
-        <article data-reveal><h3><a href="https://github.com/Ycaro-Oleg/Rubric" target="_blank" rel="noopener">Rubric</a></h3><p>{{ partial "t.html" (dict "en" "Find your next book. And people who read like you." "pt" "Encontre sua próxima leitura. E pessoas que leem como você.") }}</p><span class="project-tech">React Native · Expo · Rails API</span></article>
-        <article data-reveal><h3><a href="https://github.com/Ycaro-Oleg/NoMore" target="_blank" rel="noopener">No More</a></h3><p>{{ partial "t.html" (dict "en" "Commitments, Pomodoro sessions and proof that the work got done." "pt" "Compromissos, sessões de Pomodoro e prova de trabalho feito.") }}</p><span class="project-tech">Ruby on Rails · PostgreSQL</span></article>
+      <div class="project-index" data-project-kind="web">
+        <article data-reveal="line"><h3><a href="https://github.com/Ycaro-Oleg/Verdikt" target="_blank" rel="noopener">Verdikt</a></h3><p>{{ partial "t.html" (dict "en" "A product URL goes in. An AI purchase verdict comes out." "pt" "Entra o link do produto. Sai um veredito de compra com IA.") }}</p><span class="project-tech">Rails 8 · Sidekiq · Claude API</span></article>
+        <article data-reveal="line"><h3><a href="https://github.com/Ycaro-Oleg/Rubric" target="_blank" rel="noopener">Rubric</a></h3><p>{{ partial "t.html" (dict "en" "Find your next book. And people who read like you." "pt" "Encontre sua próxima leitura. E pessoas que leem como você.") }}</p><span class="project-tech">React Native · Expo · Rails API</span></article>
+        <article data-reveal="line"><h3><a href="https://github.com/Ycaro-Oleg/NoMore" target="_blank" rel="noopener">No More</a></h3><p>{{ partial "t.html" (dict "en" "Commitments, Pomodoro sessions and proof that the work got done." "pt" "Compromissos, sessões de Pomodoro e prova de trabalho feito.") }}</p><span class="project-tech">Ruby on Rails · PostgreSQL</span></article>
       </div>
     </div>
   </section>
@@ -71,7 +34,7 @@
   </section>
 
   <section class="about-section" id="about" aria-labelledby="about-title">
-    <figure class="about-portrait" data-reveal><img src="{{ "Myself.png" | relURL }}" alt="Ycaro Pires" loading="lazy" width="640" height="640"><figcaption>Ycaro Pires</figcaption></figure>
+    <figure class="about-portrait" data-reveal><img src="{{ "media/portrait.webp" | relURL }}" alt="Ycaro Pires" loading="lazy" width="640" height="640"><figcaption>Ycaro Pires</figcaption></figure>
     <div class="about-copy">
       <h2 id="about-title">{{ partial "t.html" (dict "en" "The mind behind it" "pt" "A mente por aqui") }}</h2>
       <p class="about-lead" data-reveal>{{ partial "t.html" (dict "en" "I like understanding how things work. Then building my own." "pt" "Gosto de entender como as coisas funcionam. E depois construir as minhas.") }}</p>

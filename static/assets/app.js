@@ -6,26 +6,6 @@
   const normalize = value => String(value || "").toLowerCase().startsWith("pt") ? "pt-br" : "en";
   let language = normalize(read("ycr.lang") || root.lang);
   const text = (en, pt) => language === "pt-br" ? pt : en;
-  const toneExamples = {
-    en: [
-      "Spent a day at GolfVille brainstorming with a friend. We left with a name, a clear idea and a working POC for Larper. Now comes the part we're still learning: marketing.",
-      "One day, one friend, one idea we couldn't leave alone. At GolfVille we named Larper, shaped the product and built the first POC. Getting it into people's hands is our next challenge.",
-      "Went to a resort. Came back with a startup. Apparently a day of brainstorming at GolfVille was enough to turn a conversation into Larper. The POC exists. My marketing skills are still loading."
-    ],
-    "pt-br": [
-      "Passei um dia no GolfVille trocando ideia com um amigo. Saímos com um nome, uma ideia definida e uma POC do Larper funcionando. Agora vem a parte que ainda estamos aprendendo: marketing.",
-      "Um dia, um amigo e uma ideia que não dava pra largar. No GolfVille demos nome ao Larper, moldamos o produto e fizemos a primeira POC. Fazer isso chegar nas pessoas é o próximo desafio.",
-      "Fui pra um resort. Voltei com uma startup. Aparentemente um dia de brainstorming no GolfVille bastou pra transformar uma conversa no Larper. A POC existe. Meu conhecimento de marketing ainda está carregando."
-    ]
-  };
-  const tone = document.querySelector("#larp-tone");
-  function updateTone() {
-    const output = document.querySelector("#tone-output");
-    if (!tone || !output) return;
-    const index = Math.max(0, Math.min(2, Number(tone.value) - 1));
-    output.textContent = toneExamples[language][index];
-    tone.setAttribute("aria-valuetext", [text("Grounded", "Pé no chão"), text("Confident", "Confiante"), "Full larp"][index]);
-  }
   let headings = [];
 
   function buildArticle() {
@@ -84,7 +64,7 @@
     });
     const status = document.querySelector("#copy-status");
     if (status) status.textContent = "";
-    updateTone();
+
     buildArticle();
     filterPosts();
     document.querySelectorAll("[data-lang-attribute]").forEach(el => {
@@ -94,6 +74,7 @@
   let scheduled = false;
   function updateProgress() {
     scheduled = false;
+    updateDeskScroll();
     const article = document.querySelector("#article-body");
     const bar = document.querySelector("#reading-progress-bar");
     if (!article || !bar) return;
@@ -143,7 +124,7 @@
   nav?.addEventListener("click", event => { if (event.target.closest("a")) closeMenu(); });
   document.addEventListener("keydown", event => { if (event.key === "Escape" && menu?.getAttribute("aria-expanded") === "true") { closeMenu(); menu.focus(); } });
   document.addEventListener("click", event => { if (!event.target.closest(".site-header")) closeMenu(); });
-  tone?.addEventListener("input", updateTone);
+
   search?.addEventListener("input", filterPosts);
   document.querySelector("#clear-search")?.addEventListener("click", () => { search.value = ""; filterPosts(); search.focus(); });
   document.querySelector("#copy-link")?.addEventListener("click", async () => {
@@ -167,5 +148,172 @@
   }
   window.addEventListener("scroll", scheduleProgress, { passive: true });
   window.addEventListener("resize", scheduleProgress);
+  const reducedMotion = matchMedia("(prefers-reduced-motion: reduce)");
+  const desk = document.querySelector("[data-desk]");
+  function updateDeskScroll() {
+    if (!desk || reducedMotion.matches) return;
+    const hero = document.querySelector(".studio-hero").getBoundingClientRect();
+    desk.style.setProperty("--desk-scroll", Math.min(1, Math.max(0, -hero.top / hero.height)).toFixed(3));
+  }
+  if (desk && matchMedia("(hover: hover) and (pointer: fine)").matches) {
+    desk.addEventListener("pointermove", event => {
+      if (reducedMotion.matches) return;
+      const rect = desk.getBoundingClientRect();
+      desk.style.setProperty("--desk-x", ((event.clientX - rect.left) / rect.width - .5).toFixed(3));
+      desk.style.setProperty("--desk-y", ((event.clientY - rect.top) / rect.height - .5).toFixed(3));
+    });
+    desk.addEventListener("pointerleave", () => {
+      desk.style.setProperty("--desk-x", "0");
+      desk.style.setProperty("--desk-y", "0");
+    });
+  }
+  const productTabs = Array.from(document.querySelectorAll("[data-product-tab]"));
+  function selectProductTab(tab, focus = false) {
+    productTabs.forEach(button => {
+      const selected = button === tab;
+      button.setAttribute("aria-selected", String(selected));
+      button.tabIndex = selected ? 0 : -1;
+      const panel = document.getElementById(button.getAttribute("aria-controls"));
+      if (!panel) return;
+      panel.hidden = !selected;
+      if (selected && !reducedMotion.matches) panel.animate(
+        [{ opacity: .35, transform: "translateY(12px)" }, { opacity: 1, transform: "translateY(0)" }],
+        { duration: 350, easing: "cubic-bezier(.16,1,.3,1)" }
+      );
+    });
+    if (focus) tab.focus();
+  }
+  productTabs.forEach((tab, index) => {
+    tab.addEventListener("click", () => selectProductTab(tab));
+    tab.addEventListener("keydown", event => {
+      let next;
+      if (event.key === "ArrowRight") next = (index + 1) % productTabs.length;
+      if (event.key === "ArrowLeft") next = (index + productTabs.length - 1) % productTabs.length;
+      if (event.key === "Home") next = 0;
+      if (event.key === "End") next = productTabs.length - 1;
+      if (next === undefined) return;
+      event.preventDefault();
+      selectProductTab(productTabs[next], true);
+    });
+  });
+  if (productTabs.length) selectProductTab(productTabs[0]);
+
+  const mediaDialog = document.querySelector("#media-dialog");
+  const expandedImage = document.querySelector("#media-expanded");
+  const mediaCaption = document.querySelector("#media-caption");
+  const mediaZoom = document.querySelector("#media-zoom");
+  const mediaViewport = document.querySelector("#media-image-viewport");
+  let mediaTrigger;
+  mediaZoom?.addEventListener("click", () => {
+    const zoomed = mediaViewport.classList.toggle("is-zoomed");
+    expandedImage.style.setProperty("--image-actual-width", expandedImage.naturalWidth + "px");
+    mediaZoom.setAttribute("aria-pressed", String(zoomed));
+    mediaZoom.textContent = zoomed ? text("Fit image", "Ajustar imagem") : text("Zoom in", "Ampliar");
+  });
+  document.querySelectorAll("[data-lightbox]").forEach(link => {
+    link.addEventListener("click", event => {
+      if (!mediaDialog || !mediaDialog.showModal) return;
+      event.preventDefault();
+      mediaTrigger = link;
+      mediaViewport?.classList.remove("is-zoomed");
+      mediaZoom?.setAttribute("aria-pressed", "false");
+      if (mediaZoom) mediaZoom.textContent = text("Zoom in", "Ampliar");
+      const caption = text(link.dataset.captionEn, link.dataset.captionPt);
+      expandedImage.src = link.href;
+      expandedImage.alt = link.querySelector("img").alt;
+      mediaCaption.textContent = caption;
+      mediaDialog.showModal();
+      syncFilm();
+    });
+  });
+  mediaDialog?.addEventListener("click", event => {
+    if (event.target === mediaDialog) {
+      const rect = mediaDialog.getBoundingClientRect();
+      if (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom) mediaDialog.close();
+    }
+  });
+  mediaDialog?.addEventListener("close", () => { mediaTrigger?.focus(); syncFilm(); });
+
+  const galleryTrack = document.querySelector(".campaign-track");
+  const galleryButtons = Array.from(document.querySelectorAll("[data-gallery-step]"));
+  function moveGallery(step) {
+    if (!galleryTrack) return;
+    const item = galleryTrack.firstElementChild;
+    const gap = parseFloat(getComputedStyle(galleryTrack).gap) || 0;
+    galleryTrack.scrollBy({ left: step * (item.getBoundingClientRect().width + gap), behavior: reducedMotion.matches ? "auto" : "smooth" });
+  }
+  function updateGalleryButtons() {
+    if (!galleryTrack) return;
+    galleryButtons.forEach(button => {
+      button.disabled = Number(button.dataset.galleryStep) < 0
+        ? galleryTrack.scrollLeft < 2
+        : galleryTrack.scrollLeft + galleryTrack.clientWidth >= galleryTrack.scrollWidth - 2;
+    });
+  }
+  galleryButtons.forEach(button => button.addEventListener("click", () => moveGallery(Number(button.dataset.galleryStep))));
+  galleryTrack?.addEventListener("scroll", updateGalleryButtons, { passive: true });
+  galleryTrack?.addEventListener("keydown", event => {
+    if (event.target !== galleryTrack || !["ArrowLeft", "ArrowRight"].includes(event.key)) return;
+    event.preventDefault();
+    moveGallery(event.key === "ArrowRight" ? 1 : -1);
+  });
+  window.addEventListener("resize", updateGalleryButtons);
+  updateGalleryButtons();
+
+  const projectFilters = Array.from(document.querySelectorAll("[data-project-filter]"));
+  projectFilters.forEach(button => button.addEventListener("click", () => {
+    const apply = () => {
+      const kind = button.dataset.projectFilter;
+      projectFilters.forEach(item => item.setAttribute("aria-pressed", String(item === button)));
+      document.querySelectorAll("[data-project-kind]").forEach(project => {
+        project.hidden = kind !== "all" && project.dataset.projectKind !== kind;
+      });
+      document.querySelector(".secondary-projects")?.classList.toggle("is-single", kind !== "all");
+    };
+    if (!reducedMotion.matches && document.startViewTransition) document.startViewTransition(apply);
+    else apply();
+  }));
+
+  const film = document.querySelector("#larper-film");
+  let filmInView = false;
+  let userPausedFilm = false;
+  let automaticPause = false;
+  function pauseFilm() {
+    if (film && !film.paused) {
+      automaticPause = true;
+      film.pause();
+    }
+  }
+  function syncFilm() {
+    if (!film) return;
+    const canPlay = filmInView && !document.hidden && !mediaDialog?.open && !reducedMotion.matches && !navigator.connection?.saveData && !userPausedFilm;
+    if (canPlay) film.play().catch(() => {});
+    else pauseFilm();
+  }
+  if (film && "IntersectionObserver" in window) {
+    const filmObserver = new IntersectionObserver(entries => {
+      filmInView = entries[0].isIntersecting;
+      syncFilm();
+    }, { threshold: .35 });
+    filmObserver.observe(film);
+    film.addEventListener("pause", () => {
+      if (automaticPause) automaticPause = false;
+      else userPausedFilm = true;
+    });
+    film.addEventListener("play", () => { userPausedFilm = false; });
+    document.addEventListener("visibilitychange", syncFilm);
+    reducedMotion.addEventListener("change", syncFilm);
+  }
+  if (document.body.classList.contains("is-home") && "IntersectionObserver" in window) {
+    const sectionNav = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        const link = document.querySelector('.nav-link[href$="#' + entry.target.id + '"]');
+        if (!link) return;
+        if (entry.isIntersecting) link.setAttribute("aria-current", "location");
+        else link.removeAttribute("aria-current");
+      });
+    }, { rootMargin: "-15% 0px -60% 0px" });
+    document.querySelectorAll("#projects, #about").forEach(section => sectionNav.observe(section));
+  }
   setLanguage(language, false);
 })();

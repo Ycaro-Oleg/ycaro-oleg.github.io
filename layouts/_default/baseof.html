@@ -26,12 +26,14 @@
     </script>
     <link rel="preload" href="{{ "assets/fonts/cabinet-grotesk.woff2" | relURL }}" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="{{ "assets/app.css" | relURL }}?v={{ readFile "static/assets/app.css" | sha256 | truncate 12 "" }}">
+    <link rel="stylesheet" href="{{ "assets/experience.css" | relURL }}?v={{ readFile "static/assets/experience.css" | sha256 | truncate 12 "" }}">
   </head>
   <body class="page{{ if .IsHome }} is-home{{ end }}">
     <a href="#content" class="skip-link">{{ partial "t.html" (dict "en" "Skip to content" "pt" "Pular para o conteúdo") }}</a>
     {{ partial "header.html" . }}
     <main id="content" class="page-main">{{ block "main" . }}{{ end }}</main>
     {{ partial "footer.html" . }}
+    {{ partial "media_dialog.html" . }}
     {{ partial "lang_global.html" . }}
   </body>
 </html>

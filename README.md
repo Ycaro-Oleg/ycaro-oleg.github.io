@@ -51,6 +51,6 @@ Run hugo --minify to verify the production build. Pushing to master or main publ
 
 ## Interface
 
-Self-hosted Cabinet Grotesk, the original dark/yellow brand, a Larper tone example, persistent EN/PT and light/dark choices, mobile navigation, full-text archive search, article contents and reading progress. Animation respects prefers-reduced-motion. Content, project links and both article languages remain readable without JavaScript.
+Self-hosted Cabinet Grotesk, the original dark/yellow brand, real Larper captures, campaign artwork and a launch video, persistent EN/PT and light/dark choices, mobile navigation, full-text archive search, article contents and reading progress. Project tabs, image enlargement, campaign navigation and project filters work with keyboard and touch. Animation respects prefers-reduced-motion; the launch video pauses off screen and does not autoplay for reduced-motion or data-saving preferences. Content, project links and both article languages remain readable without JavaScript.
 
 Design decisions and validation: [DESIGN.md](DESIGN.md).
